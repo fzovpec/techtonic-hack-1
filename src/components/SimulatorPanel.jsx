@@ -292,15 +292,59 @@ export default function SimulatorPanel({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
           
           {/* Detected Intent Banner */}
-          <div className="md:col-span-7 rounded-xl bg-slate-900/90 p-3 border border-slate-800/80">
-            <span className="text-[10px] text-slate-400 uppercase tracking-wider block mb-0.5">
-              Predicted Life Event
-            </span>
-            <div className="flex items-center gap-2">
+          <div className="md:col-span-7 rounded-xl bg-slate-900/90 p-3 border border-slate-800/80 space-y-2">
+            <div>
+              <span className="text-[10px] text-slate-400 uppercase tracking-wider block mb-0.5">
+                Predicted Life Event
+              </span>
               <span className="text-sm font-bold text-white tracking-tight">
                 {formatIntentName(prediction?.detected_intent)}
               </span>
             </div>
+
+            {/* Multi-Intent Leveling Distribution */}
+            {prediction?.intent_distribution && (
+              <div className="space-y-1 pt-1 border-t border-slate-800/80 text-[10px]">
+                <div className="flex items-center justify-between text-slate-400">
+                  <span className="truncate">Home Buyer</span>
+                  <span className="font-mono text-cyan-300 font-bold ml-1">
+                    {Math.round((prediction.intent_distribution.first_time_home_buyer || 0) * 100)}%
+                  </span>
+                </div>
+                <div className="h-1 w-full rounded-full bg-slate-800 overflow-hidden">
+                  <div 
+                    className="h-full bg-cyan-400 rounded-full transition-all duration-300"
+                    style={{ width: `${Math.round((prediction.intent_distribution.first_time_home_buyer || 0) * 100)}%` }}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between text-slate-400 pt-0.5">
+                  <span className="truncate">Freelance Starter</span>
+                  <span className="font-mono text-purple-300 font-bold ml-1">
+                    {Math.round((prediction.intent_distribution.freelance_entrepreneur || 0) * 100)}%
+                  </span>
+                </div>
+                <div className="h-1 w-full rounded-full bg-slate-800 overflow-hidden">
+                  <div 
+                    className="h-full bg-purple-400 rounded-full transition-all duration-300"
+                    style={{ width: `${Math.round((prediction.intent_distribution.freelance_entrepreneur || 0) * 100)}%` }}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between text-slate-400 pt-0.5">
+                  <span className="truncate">Wealth Accumulator</span>
+                  <span className="font-mono text-emerald-300 font-bold ml-1">
+                    {Math.round((prediction.intent_distribution.wealth_accumulator || 0) * 100)}%
+                  </span>
+                </div>
+                <div className="h-1 w-full rounded-full bg-slate-800 overflow-hidden">
+                  <div 
+                    className="h-full bg-emerald-400 rounded-full transition-all duration-300"
+                    style={{ width: `${Math.round((prediction.intent_distribution.wealth_accumulator || 0) * 100)}%` }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Confidence Meter */}

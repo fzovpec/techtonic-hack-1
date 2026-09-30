@@ -2034,156 +2034,30 @@
     "description": "Quarterly VAT filing and freelance IP copyright optimization"
   },
   {
-    "id": "tx-fa5f0732",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:28.252595+00:00",
-    "amount": -750,
+    "id": "tx-a5f88b9f",
+    "client_id": "c-011",
+    "timestamp": "2026-09-30T19:24:48.715120+00:00",
+    "amount": -750.0,
     "merchant": "Notaris Van Damme & Partners Leuven",
     "category": "notary",
     "description": "Deposit for sales agreement deed closing"
   },
   {
-    "id": "tx-d1ae588c",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:33.612518+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
+    "id": "tx-cfdae789",
+    "client_id": "c-011",
+    "timestamp": "2026-09-30T19:24:53.831470+00:00",
+    "amount": -49.0,
+    "merchant": "Immoweb S.A. Brussels",
+    "category": "real_estate_platform",
+    "description": "Property search alerts & valuation report"
   },
   {
-    "id": "tx-647ab5f5",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:34.221618+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-ae226837",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:34.535425+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-7a695db4",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:34.847741+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-f30b9b73",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:37.859477+00:00",
-    "amount": -750,
-    "merchant": "Notaris Van Damme & Partners Leuven",
-    "category": "notary",
-    "description": "Deposit for sales agreement deed closing"
-  },
-  {
-    "id": "tx-6d7dc67a",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:39.439868+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-5543aa26",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:39.678538+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-15561d3f",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:42.265858+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-9fffdd97",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:42.653384+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-f393dcc8",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:44.061539+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-f3d5121a",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:44.290415+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-2cba03aa",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:50.670039+00:00",
-    "amount": -750,
-    "merchant": "Notaris Van Damme & Partners Leuven",
-    "category": "notary",
-    "description": "Deposit for sales agreement deed closing"
-  },
-  {
-    "id": "tx-22d37043",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:53.427435+00:00",
-    "amount": -750,
-    "merchant": "Notaris Van Damme & Partners Leuven",
-    "category": "notary",
-    "description": "Deposit for sales agreement deed closing"
-  },
-  {
-    "id": "tx-ebae5b5c",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:55.264801+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-ccec9cb2",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:52:59.366205+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
-  },
-  {
-    "id": "tx-976e60ab",
-    "client_id": "c-001",
-    "timestamp": "2026-09-30T18:53:07.865774+00:00",
-    "amount": -550,
-    "merchant": "KBC High-Yield Savings Account",
-    "category": "savings_deposit",
-    "description": "Automatic monthly savings deposit"
+    "id": "tx-99aff2fc",
+    "client_id": "c-011",
+    "timestamp": "2026-09-30T19:24:54.145588+00:00",
+    "amount": -49.0,
+    "merchant": "Immoweb S.A. Brussels",
+    "category": "real_estate_platform",
+    "description": "Property search alerts & valuation report"
   }
 ]

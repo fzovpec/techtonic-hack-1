@@ -4,16 +4,21 @@ Framework: FastAPI (Python 3.10+)
 Persistence: JSON files in /data
 """
 
+import os
 import json
 import shutil
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Literal, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional, Union
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Path as FastApiPath
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.middleware.trustedhost import TrustedHostMiddleware
+from starlette.requests import Request
+from starlette.responses import JSONResponse
+from pydantic import BaseModel, Field
 
 # ---------------------------------------------------------------------------
 # Directories & File Paths
@@ -105,6 +110,7 @@ class PredictionDetails(BaseModel):
     confidence: float
     stage: str
     detected_signals: List[str]
+    intent_distribution: Optional[Dict[str, float]] = None
 
 class ExperienceDetails(BaseModel):
     kate_message: str
@@ -116,9 +122,36 @@ class ClientPredictionResponse(BaseModel):
     prediction: PredictionDetails
     experience: ExperienceDetails
 
-class ClientEventRequest(BaseModel):
-    type: Literal["transaction", "interaction"]
-    payload: Dict[str, Any]
+class TransactionPayload(BaseModel):
+    amount: float = Field(..., ge=-10_000_000.0, le=10_000_000.0, description="Transaction amount in EUR")
+    merchant: str = Field(..., min_length=1, max_length=200, description="Merchant or beneficiary entity")
+    category: str = Field(..., min_length=1, max_length=100, description="Categorization tag")
+    description: Optional[str] = Field(None, max_length=500, description="Transaction description or memo")
+    id: Optional[str] = Field(None, max_length=64, description="Optional client transaction ID")
+    timestamp: Optional[str] = Field(None, max_length=64, description="Optional ISO timestamp")
+
+    model_config = {"extra": "ignore"}
+
+class InteractionPayload(BaseModel):
+    action: str = Field(..., min_length=1, max_length=120, description="Interaction action code")
+    details: Optional[Union[str, Dict[str, Any]]] = Field(None, description="Interaction metadata or parameters")
+    id: Optional[str] = Field(None, max_length=64, description="Optional client interaction ID")
+    timestamp: Optional[str] = Field(None, max_length=64, description="Optional ISO timestamp")
+
+    model_config = {"extra": "ignore"}
+
+class TransactionEventRequest(BaseModel):
+    type: Literal["transaction"]
+    payload: TransactionPayload
+
+class InteractionEventRequest(BaseModel):
+    type: Literal["interaction"]
+    payload: InteractionPayload
+
+ClientEventRequest = Annotated[
+    Union[TransactionEventRequest, InteractionEventRequest],
+    Field(discriminator="type")
+]
 
 # ---------------------------------------------------------------------------
 # Prediction Engine Core Helpers & Logic
@@ -149,18 +182,36 @@ def classify_tx_intent(tx: Dict[str, Any]) -> Optional[str]:
     return None
 
 def get_recency_weight(recency_idx: int) -> float:
+    """
+    Time Decay Leveling Function:
+    - Index 0 (most recent / live signal): 1.0 (100% full weight)
+    - Recent events (idx 1-2): 0.85
+    - Medium past (idx 3-5): 0.65
+    - Older past (idx > 5): decays smoothly to 0.35
+    Old historical transactions gradually lose power, preventing historical lock-in.
+    """
     if recency_idx == 0:
-        return 2.5  # Brand-new live signal just injected
-    elif recency_idx == 1:
-        return 2.0
-    elif recency_idx == 2:
-        return 1.6
-    elif recency_idx <= 4:
-        return 1.2
-    elif recency_idx <= 8:
-        return 0.8
+        return 1.0
+    elif recency_idx <= 2:
+        return 0.85
+    elif recency_idx <= 5:
+        return 0.65
     else:
-        return max(0.35, 0.8 - (recency_idx - 8) * 0.05)
+        return max(0.35, 0.65 - (recency_idx - 5) * 0.05)
+
+def get_diminishing_interaction_score(base_points: float, count: int) -> float:
+    """
+    Diminishing Returns / Saturation Curve:
+    Repeated interactions yield diminishing marginal value so one action cannot dominate indefinitely.
+    """
+    if count <= 1:
+        return base_points
+    elif count == 2:
+        return base_points * 1.35
+    elif count == 3:
+        return base_points * 1.55
+    else:
+        return base_points * 1.70
 
 def predict_client_intent(client_id: str) -> Dict[str, Any]:
     clients = load_json(CLIENTS_FILE, [])
@@ -314,30 +365,62 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
             signals_map["family_expansion"].append(f"Nursery & childcare expense: €{abs(amt):,.0f} at {tx.get('merchant', 'Retailer')}")
             continue
 
-    # Evaluate Interactions
+    # Evaluate Interactions with Diminishing Returns
     mortgage_sims = [i for i in interactions if i.get("action") in ["mortgage_simulator_used", "mortgage_calculator", "loan_simulator"]]
     if mortgage_sims:
-        scores["first_time_home_buyer"] += 35.0
-        signals_map["first_time_home_buyer"].append(f"{len(mortgage_sims)}x visit(s) to mortgage loan simulator")
+        sim_pts = get_diminishing_interaction_score(35.0, len(mortgage_sims))
+        scores["first_time_home_buyer"] += sim_pts
+        signals_map["first_time_home_buyer"].append(f"{len(mortgage_sims)}x visit(s) to mortgage loan simulator (+{sim_pts:.0f}pt)")
 
     kbo_interactions = [i for i in interactions if i.get("action") in ["kbo_search_viewed", "business_account_viewed", "freelance_guide_opened", "cbe_search_viewed"] or any(kw in str(i.get("details", "")).lower() for kw in ["cbe", "business", "freelance", "company"])]
     if kbo_interactions:
-        scores["freelance_entrepreneur"] += 35.0
-        signals_map["freelance_entrepreneur"].append("CBE/Company registration lookup or business account viewed")
+        kbo_pts = get_diminishing_interaction_score(35.0, len(kbo_interactions))
+        scores["freelance_entrepreneur"] += kbo_pts
+        signals_map["freelance_entrepreneur"].append(f"CBE/Company registration lookup or business account viewed (+{kbo_pts:.0f}pt)")
 
     invest_interactions = [i for i in interactions if i.get("action") in ["investment_fund_viewed", "pension_simulator_used", "wealth_management_viewed"]]
     if invest_interactions:
-        scores["wealth_accumulator"] += 35.0
-        signals_map["wealth_accumulator"].append("Investment fund or pension savings simulator consulted")
+        inv_pts = get_diminishing_interaction_score(35.0, len(invest_interactions))
+        scores["wealth_accumulator"] += inv_pts
+        signals_map["wealth_accumulator"].append(f"Investment fund or pension savings simulator consulted (+{inv_pts:.0f}pt)")
 
     if client.get("savings_balance", 0) >= 40000.0:
         scores["wealth_accumulator"] += 20.0
         signals_map["wealth_accumulator"].append(f"Substantial savings reserve of €{client['savings_balance']:,.0f}")
 
-    # Determine Top Intent & Runner-Up Intent
+    # Cap all intent scores at 100.0 to prevent historical lock-in / runaway scores
+    for k in scores:
+        scores[k] = min(100.0, max(0.0, scores[k]))
+
+    # Determine Baseline Incumbent Intent from client profile
+    prof = str(client.get("current_life_stage", "") + " " + client.get("profile", "")).lower()
+    if any(k in prof for k in ["freelance", "independent"]):
+        incumbent_intent = "freelance_entrepreneur"
+    elif any(k in prof for k in ["wealth", "pre_retirement"]) or client.get("savings_balance", 0) >= 80000.0:
+        incumbent_intent = "wealth_accumulator"
+    elif any(k in prof for k in ["family", "kids"]):
+        incumbent_intent = "family_expansion"
+    else:
+        incumbent_intent = "first_time_home_buyer"
+
+    # Anti-Flicker Hysteresis Threshold (Challenger must beat incumbent by 12 points)
+    HYSTERESIS_MARGIN = 12.0
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    detected_intent, top_score = sorted_scores[0]
+    top_intent, top_score = sorted_scores[0]
     second_intent, second_score = sorted_scores[1]
+
+    if top_intent != incumbent_intent and top_score < (scores.get(incumbent_intent, 0.0) + HYSTERESIS_MARGIN):
+        detected_intent = incumbent_intent
+        top_score = scores.get(incumbent_intent, 0.0)
+    else:
+        detected_intent = top_intent
+
+    # Intent Distribution (for multi-hypothesis transparency visualization)
+    intent_distribution = {
+        "first_time_home_buyer": round(min(0.98, max(0.05, scores["first_time_home_buyer"] / 100.0)), 2),
+        "freelance_entrepreneur": round(min(0.98, max(0.05, scores["freelance_entrepreneur"] / 100.0)), 2),
+        "wealth_accumulator": round(min(0.98, max(0.05, scores["wealth_accumulator"] / 100.0)), 2)
+    }
 
     # Dynamic Confidence Calculation (Decreases on competition, cancellations, or staleness)
     if top_score <= 5.0:
@@ -370,10 +453,13 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if N >= 2:
             recent_2 = sorted_txs[-2:]
             recent_votes = [classify_tx_intent(t) for t in recent_2]
+            # Savings deposits support home down payments; don't penalize as drift
+            if detected_intent == "first_time_home_buyer":
+                recent_votes = [v for v in recent_votes if v != "wealth_accumulator"]
             if detected_intent not in recent_votes and any(v in scores for v in recent_votes):
-                staleness_penalty = 0.14
+                staleness_penalty = 0.10
                 competing_title = second_intent.replace('_', ' ')
-                signals_map[detected_intent].append(f"⚠️ Recent transactions show emerging focus on {competing_title}")
+                signals_map[detected_intent].append(f"Recent signals show concurrent interest in {competing_title}")
 
         confidence = round(max(0.35, min(0.98, base_conf - margin_penalty - cancellation_penalty - staleness_penalty)), 2)
 
@@ -383,7 +469,7 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
     if detected_intent == "first_time_home_buyer":
         if is_closing_active and confidence >= 0.70 and client.get("savings_balance", 0) >= 20000.0:
             stage = "action_ready"
-        elif (notary_txs or surveyor_txs or immo_txs or mortgage_sims or confidence >= 0.58) and not has_closing_cancellation:
+        elif (notary_txs or surveyor_txs or mortgage_sims or confidence >= 0.65) and not has_closing_cancellation:
             stage = "active_decision"
         else:
             stage = "exploring"
@@ -564,7 +650,8 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
             "detected_intent": detected_intent,
             "confidence": confidence,
             "stage": stage,
-            "detected_signals": detected_signals
+            "detected_signals": detected_signals,
+            "intent_distribution": intent_distribution
         },
         "experience": {
             "kate_message": kate_message,
@@ -572,6 +659,33 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
             "recommended_actions": recommended_actions
         }
     }
+
+# ---------------------------------------------------------------------------
+# Security & Input Validation Middlewares
+# ---------------------------------------------------------------------------
+class ContentSizeLimitMiddleware(BaseHTTPMiddleware):
+    """
+    Validates request payload size in Starlette to prevent memory exhaustion and DoS.
+    """
+    def __init__(self, app, max_upload_size: int = 1_048_576):  # 1 MB limit
+        super().__init__(app)
+        self.max_upload_size = max_upload_size
+
+    async def dispatch(self, request: Request, call_next):
+        content_length = request.headers.get("content-length")
+        if content_length:
+            try:
+                if int(content_length) > self.max_upload_size:
+                    return JSONResponse(
+                        status_code=413,
+                        content={"detail": "Payload too large. Maximum allowed size is 1MB."}
+                    )
+            except ValueError:
+                return JSONResponse(
+                    status_code=400,
+                    content={"detail": "Invalid Content-Length header."}
+                )
+        return await call_next(request)
 
 # ---------------------------------------------------------------------------
 # FastAPI Application Setup
@@ -582,11 +696,21 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# 1. Host Header Input Validation (Protects against host header injection / cache poisoning)
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=["localhost", "127.0.0.1", "testserver", "*"]
+)
+
+# 2. Request Body Size Limit Validation (Protects against DoS / resource exhaustion)
+app.add_middleware(ContentSizeLimitMiddleware, max_upload_size=1_048_576)
+
+# 3. Secure CORS Middleware (Local dev regex with credentials, no wildcard with credentials)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$",
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -625,38 +749,57 @@ def get_clients():
     ]
 
 @app.get("/api/clients/{client_id}", response_model=ClientPredictionResponse)
-def get_client_prediction(client_id: str):
+def get_client_prediction(
+    client_id: str = FastApiPath(
+        ...,
+        min_length=2,
+        max_length=20,
+        pattern=r"^c-?[0-9]{1,4}$",
+        description="Unique client identifier, e.g., c-001"
+    )
+):
     return predict_client_intent(client_id)
 
 @app.post("/api/clients/{client_id}/events", response_model=ClientPredictionResponse)
-def post_client_event(client_id: str, event_req: ClientEventRequest):
+def post_client_event(
+    event_req: ClientEventRequest,
+    client_id: str = FastApiPath(
+        ...,
+        min_length=2,
+        max_length=20,
+        pattern=r"^c-?[0-9]{1,4}$",
+        description="Unique client identifier, e.g., c-001"
+    )
+):
     clients = load_json(CLIENTS_FILE, [])
     client = find_client(client_id, clients)
     if not client:
         raise HTTPException(status_code=404, detail=f"Client '{client_id}' not found.")
 
     normalized_id = client["id"]
-    event_type = event_req.type
-    payload = dict(event_req.payload)
 
-    event_id = payload.get("id") or f"{'tx' if event_type == 'transaction' else 'int'}-{uuid.uuid4().hex[:8]}"
-    timestamp = payload.get("timestamp") or current_iso_time()
+    if event_req.type == "transaction":
+        tx_payload = event_req.payload
+        event_id = tx_payload.id or f"tx-{uuid.uuid4().hex[:8]}"
+        timestamp = tx_payload.timestamp or current_iso_time()
 
-    event_record = {
-        "id": event_id,
-        "client_id": normalized_id,
-        "timestamp": timestamp,
-        **payload
-    }
+        event_record = {
+            "id": event_id,
+            "client_id": normalized_id,
+            "timestamp": timestamp,
+            "amount": round(tx_payload.amount, 2),
+            "merchant": tx_payload.merchant.strip(),
+            "category": tx_payload.category.strip().lower(),
+            "description": (tx_payload.description or "").strip()
+        }
 
-    if event_type == "transaction":
         txs = load_json(TRANSACTIONS_FILE, [])
         txs.append(event_record)
         save_json(TRANSACTIONS_FILE, txs)
 
         # Update client's savings balance dynamically
-        amt = float(payload.get("amount", 0))
-        cat = str(payload.get("category", "")).lower()
+        amt = tx_payload.amount
+        cat = tx_payload.category.strip().lower()
         if cat in ["savings_deposit", "refund"]:
             delta = abs(amt)
             client["savings_balance"] = round(client.get("savings_balance", 0.0) + delta, 2)
@@ -671,7 +814,20 @@ def post_client_event(client_id: str, event_req: ClientEventRequest):
                 if c["id"] == normalized_id:
                     c["savings_balance"] = client["savings_balance"]
             save_json(CLIENTS_FILE, clients)
-    elif event_type == "interaction":
+
+    elif event_req.type == "interaction":
+        int_payload = event_req.payload
+        event_id = int_payload.id or f"int-{uuid.uuid4().hex[:8]}"
+        timestamp = int_payload.timestamp or current_iso_time()
+
+        event_record = {
+            "id": event_id,
+            "client_id": normalized_id,
+            "timestamp": timestamp,
+            "action": int_payload.action.strip().lower(),
+            "details": int_payload.details if int_payload.details is not None else {}
+        }
+
         interactions = load_json(INTERACTIONS_FILE, [])
         interactions.append(event_record)
         save_json(INTERACTIONS_FILE, interactions)
@@ -696,4 +852,8 @@ def reset_simulator():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    # Configurable host and port, defaulting to 127.0.0.1 for local security
+    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("main:app", host=host, port=port, reload=True)
+
