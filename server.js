@@ -15,8 +15,21 @@ import crypto from 'crypto';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DATA_DIR = path.join(__dirname, 'data');
-const SEED_DIR = path.join(__dirname, 'data_seed');
+const DATA_DIR = path.resolve(__dirname, 'data');
+const SEED_DIR = path.resolve(__dirname, 'data_seed');
+
+const ALLOWED_DIRECTORIES = Object.freeze([
+  DATA_DIR,
+  SEED_DIR
+]);
+
+const ALLOWED_FILES = new Set([
+  'clients.json',
+  'transactions.json',
+  'interactions.json',
+  'action_catalog.json',
+  'client_states.json'
+]);
 
 const CLIENTS_FILE = path.join(DATA_DIR, 'clients.json');
 const TRANSACTIONS_FILE = path.join(DATA_DIR, 'transactions.json');
@@ -29,21 +42,58 @@ if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 if (!fs.existsSync(SEED_DIR)) fs.mkdirSync(SEED_DIR, { recursive: true });
 
 // ---------------------------------------------------------------------------
+// Security: Path Traversal & Local File Inclusion (LFI) Mitigation
+// ---------------------------------------------------------------------------
+function getSafeFilePath(targetPath, baseDir = DATA_DIR) {
+  if (!targetPath || typeof targetPath !== 'string') {
+    throw new Error('Invalid file path: path must be a non-empty string');
+  }
+
+  // Reject path traversal tokens, control characters, and null bytes immediately
+  if (targetPath.includes('..') || targetPath.includes('\0') || targetPath.includes('\r') || targetPath.includes('\n')) {
+    throw new Error('Security Error: Path traversal attempt detected');
+  }
+
+  // Extract pure file base name
+  const fileName = path.basename(path.normalize(targetPath));
+  if (!ALLOWED_FILES.has(fileName)) {
+    throw new Error(`Security Error: Access denied to '${fileName}'. File not in allowlist`);
+  }
+
+  // Verify containment within authorized directory
+  const resolvedBaseDir = path.resolve(baseDir);
+  const resolvedTarget = path.resolve(resolvedBaseDir, fileName);
+
+  const isContained = ALLOWED_DIRECTORIES.some(dir =>
+    resolvedTarget === dir || resolvedTarget.startsWith(dir + path.sep)
+  );
+
+  if (!isContained) {
+    throw new Error(`Security Error: Path traversal violation for '${resolvedTarget}'`);
+  }
+
+  return resolvedTarget;
+}
+
+// ---------------------------------------------------------------------------
 // JSON Helpers
 // ---------------------------------------------------------------------------
 function loadJson(filePath, defaultValue = []) {
-  if (!fs.existsSync(filePath)) return defaultValue;
   try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
+    const isSeed = typeof filePath === 'string' && filePath.includes('data_seed');
+    const safePath = getSafeFilePath(filePath, isSeed ? SEED_DIR : DATA_DIR);
+    if (!fs.existsSync(safePath)) return defaultValue;
+    const raw = fs.readFileSync(safePath, 'utf-8');
     return JSON.parse(raw);
   } catch (err) {
-    console.error(`Error reading ${filePath}:`, err.message);
+    console.error(`Secure loadJson error for ${filePath}:`, err.message);
     return defaultValue;
   }
 }
 
 function saveJson(filePath, data) {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+  const safePath = getSafeFilePath(filePath, DATA_DIR);
+  fs.writeFileSync(safePath, JSON.stringify(data, null, 2), 'utf-8');
 }
 
 function buildDecisionMessage(client, state) {
@@ -655,6 +705,14 @@ app.use(
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
+// Security Hardening: Validate :id parameters to block path traversal, injection, or invalid formats
+app.param('id', (req, res, next, id) => {
+  if (!id || typeof id !== 'string' || !/^[a-zA-Z0-9_-]{1,32}$/.test(id) || id.includes('..') || id.includes('/') || id.includes('\\')) {
+    return res.status(400).json({ error: 'Invalid client ID parameter format' });
+  }
+  next();
+});
+
 // Request logger for hackathon demo debugging
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
@@ -818,6 +876,11 @@ app.post('/api/simulator/trigger-event', (req, res) => {
     return res.status(400).json({ error: 'Missing required fields: client_id, type, data' });
   }
 
+  // Security Hardening: Validate client_id parameter against path traversal and injection
+  if (typeof client_id !== 'string' || !/^[a-zA-Z0-9_-]{1,32}$/.test(client_id) || client_id.includes('..') || client_id.includes('/') || client_id.includes('\\')) {
+    return res.status(400).json({ error: 'Invalid client_id parameter format' });
+  }
+
   if (type !== 'transaction' && type !== 'interaction') {
     return res.status(400).json({ error: "Type must be either 'transaction' or 'interaction'" });
   }
@@ -869,8 +932,10 @@ app.post('/api/simulator/reset', (req, res) => {
 
   const seedFiles = fs.readdirSync(SEED_DIR).filter(f => f.endsWith('.json'));
   for (const file of seedFiles) {
-    const src = path.join(SEED_DIR, file);
-    const dest = path.join(DATA_DIR, file);
+    const cleanFileName = path.basename(path.normalize(file));
+    if (!ALLOWED_FILES.has(cleanFileName)) continue;
+    const src = getSafeFilePath(cleanFileName, SEED_DIR);
+    const dest = getSafeFilePath(cleanFileName, DATA_DIR);
     fs.copyFileSync(src, dest);
   }
 

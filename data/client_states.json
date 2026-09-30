@@ -2,25 +2,18 @@
   {
     "client_id": "c-001",
     "detected_intent": "buying_first_home",
-    "confidence_score": 0.98,
-    "intent_stage": "closing",
-    "last_updated": "2026-09-30T18:20:29.202240+00:00",
-    "kate_message": "Congratulations Thomas! Your property purchase offer has been accepted and the escrow deposit is recorded. I have finalized your mortgage dossier, coordinated with your notary, and unlocked your 15% Dockx moving discount.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 13 corroborated data points across profile, transactions, and in-app tools: Starter profile stage (young_professional_starter) correlates with first property acquisition; Independent professional career track (Junior IT Consultant); Healthy savings buffer of €34,500; Escrow deposit payment of €15,000 to Notaris Van Damme & Partners Leuven (Compromis voorschot).",
+    "confidence_score": 0.86,
+    "intent_stage": "active_decision",
+    "last_updated": "2026-09-30T20:00:46.629Z",
+    "kate_message": "Hi Thomas, your home search is gathering momentum. Based on your recent simulations, you have strong borrowing capacity. Compare notary closing fees and explore pre-approved listings today.",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 6 evidence indicators across banking history, interactions, and financial profile: Starter profile stage (young_professional_starter) correlates with first property acquisition; Independent professional career track (Junior IT Consultant); Healthy savings buffer of €34,500; Active premium property search alert subscriptions (Immoweb Real Estate Premium).",
     "detected_signals": [
       "Starter profile stage (young_professional_starter) correlates with first property acquisition",
       "Independent professional career track (Junior IT Consultant)",
       "Healthy savings buffer of €34,500",
-      "Escrow deposit payment of €15,000 to Notaris Van Damme & Partners Leuven (Compromis voorschot)",
-      "1 property appraisal / surveyor inspection transaction(s) logged",
       "Active premium property search alert subscriptions (Immoweb Real Estate Premium)",
-      "Renovation / home improvement hardware expenses detected (1 txs)",
       "Active rental housing baseline (Leuven City Apartments)",
-      "2 recurring monthly savings transfer(s) detected",
-      "2x mortgage simulation(s) consulted (latest: €310,000 loan over 25 yrs, €1502/mo)",
-      "Kate consultation on property purchasing: \"How many days do I have to pay the 5% compromis deposit after making a binding purchase offer?\"",
-      "Kate consultation on property purchasing: \"Can Kate generate the official mortgage certificate and send it directly to Notaris Van Damme?\"",
-      "Mandatory property insurance bundle quote viewed (mandatory_home_bundle)"
+      "2 recurring monthly savings transfer(s) detected"
     ],
     "profile_signals": [
       "Starter profile stage (young_professional_starter) correlates with first property acquisition",
@@ -28,61 +21,53 @@
       "Healthy savings buffer of €34,500"
     ],
     "transaction_signals": [
-      "Escrow deposit payment of €15,000 to Notaris Van Damme & Partners Leuven (Compromis voorschot)",
-      "1 property appraisal / surveyor inspection transaction(s) logged",
       "Active premium property search alert subscriptions (Immoweb Real Estate Premium)",
-      "Renovation / home improvement hardware expenses detected (1 txs)",
       "Active rental housing baseline (Leuven City Apartments)",
       "2 recurring monthly savings transfer(s) detected"
     ],
-    "interaction_signals": [
-      "2x mortgage simulation(s) consulted (latest: €310,000 loan over 25 yrs, €1502/mo)",
-      "Kate consultation on property purchasing: \"How many days do I have to pay the 5% compromis deposit after making a binding purchase offer?\"",
-      "Kate consultation on property purchasing: \"Can Kate generate the official mortgage certificate and send it directly to Notaris Van Damme?\"",
-      "Mandatory property insurance bundle quote viewed (mandatory_home_bundle)"
-    ],
+    "interaction_signals": [],
     "evidence_scores": {
-      "buying_first_home": 43,
+      "buying_first_home": 13,
       "freelance_entrepreneur": 5,
       "wealth_accumulator": 6
     },
     "action_refs": [
-      "act-bank-home-04",
-      "act-ins-home-04",
-      "act-part-home-04"
+      "act-bank-home-02",
+      "act-ins-home-02",
+      "act-part-home-02"
     ],
     "active_recommendations": [
       {
-        "id": "act-bank-home-04",
+        "id": "act-bank-home-02",
         "domain": "banking",
         "target_intent": "buying_first_home",
         "intent": "buying_first_home",
-        "stage": "closing",
-        "title": "Escrow Down Payment & Loan Finalization",
-        "description": "Review final loan contract documentation, authorize mortgage funds release, and view the notarized settlement schedule.",
-        "cta": "Review Mortgage Contract",
+        "stage": "active_decision",
+        "title": "Lock Your Mortgage Interest Rate",
+        "description": "Reserve today's competitive fixed rate for up to 4 months while you tour prospective properties and prepare a purchase bid.",
+        "cta": "Lock Rate Now",
         "priority": 1
       },
       {
-        "id": "act-ins-home-04",
+        "id": "act-ins-home-02",
         "domain": "insurance",
         "target_intent": "buying_first_home",
         "intent": "buying_first_home",
-        "stage": "closing",
-        "title": "Key Handover Home All-Risk Coverage",
-        "description": "Ensure your home is protected from the exact moment of key handover with complementary 30-day move-in liability coverage.",
-        "cta": "Verify Key Protection",
+        "stage": "active_decision",
+        "title": "Fire & Outstanding Balance Discount Bundle",
+        "description": "Combine your mortgage with KBC Home Fire and Outstanding Balance coverage to receive an immediate -0.20% rate reduction.",
+        "cta": "Simulate Bundle",
         "priority": 2
       },
       {
-        "id": "act-part-home-04",
+        "id": "act-part-home-02",
         "domain": "partner",
         "target_intent": "buying_first_home",
         "intent": "buying_first_home",
-        "stage": "closing",
-        "title": "KBC x Luminus Utility & Telecom Setup",
-        "description": "Seamlessly transfer water, green electricity, gas, and high-speed internet connections with zero connection fees.",
-        "cta": "Switch Utilities",
+        "stage": "active_decision",
+        "title": "KBC x Notaris.be Closing Cost Simulator",
+        "description": "Accurately breakdown notary deed fees, registration duties (3% Flemish rule), mortgage registration taxes, and admin costs.",
+        "cta": "Calculate Deed Fees",
         "priority": 3
       }
     ]
@@ -92,9 +77,9 @@
     "detected_intent": "freelance_entrepreneur",
     "confidence_score": 0.86,
     "intent_stage": "active_decision",
-    "last_updated": "2026-09-30T18:20:29.202717+00:00",
+    "last_updated": "2026-09-30T20:00:46.631Z",
     "kate_message": "Hi Sarah, maximize your freelance earnings with our KBC Business Account Plus and save up to 53% in taxes via VAPZ pension contributions.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 11 corroborated data points across profile, transactions, and in-app tools: Independent professional career track (Freelance Marketing Strategist); Substantial savings reserve of €48,000 ready for deployment; Active rental housing baseline (Fosbury & Sons Coworking); Recurring commercial client invoice inflows (€8,000 across 2 transactions).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 11 evidence indicators across banking history, interactions, and financial profile: Independent professional career track (Freelance Marketing Strategist); Substantial savings reserve of €48,000 ready for deployment; Active rental housing baseline (Fosbury & Sons Coworking); Recurring commercial client invoice inflows (€8,000 across 2 transactions).",
     "detected_signals": [
       "Independent professional career track (Freelance Marketing Strategist)",
       "Substantial savings reserve of €48,000 ready for deployment",
@@ -104,7 +89,7 @@
       "Professional accounting and corporate fiscal filings (Fiscaal Kantoor De Graeve)",
       "Business operations tools and dedicated workspace memberships",
       "2 recurring monthly savings transfer(s) detected",
-      "Kate consultation on freelance fiscal optimization: \"How can I optimize my freelance pension savings via VAPZ to lower my personal income tax bracket?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I optimize my freelance pension savings via VAPZ to lower my personal income tax bracket?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Tax-sheltered pension simulation consulted (VAPZ Freelance Pension)"
     ],
@@ -121,7 +106,7 @@
       "2 recurring monthly savings transfer(s) detected"
     ],
     "interaction_signals": [
-      "Kate consultation on freelance fiscal optimization: \"How can I optimize my freelance pension savings via VAPZ to lower my personal income tax bracket?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I optimize my freelance pension savings via VAPZ to lower my personal income tax bracket?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Tax-sheltered pension simulation consulted (VAPZ Freelance Pension)"
     ],
@@ -176,9 +161,9 @@
     "detected_intent": "wealth_accumulator",
     "confidence_score": 0.74,
     "intent_stage": "exploring",
-    "last_updated": "2026-09-30T18:20:29.203146+00:00",
+    "last_updated": "2026-09-30T20:00:46.633Z",
     "kate_message": "Hi Tom, build long-term family security with automated recurring savings plans and check your family civil liability coverage.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 6 corroborated data points across profile, transactions, and in-app tools: Family household profile with dependent children; Active rental housing baseline (Antwerp Living Immo); 2 recurring monthly savings transfer(s) detected; Kate consultation on wealth preservation: \"What is the best way to save automatically every month for my children's higher education?\".",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 6 evidence indicators across banking history, interactions, and financial profile: Family household profile with dependent children; Active rental housing baseline (Antwerp Living Immo); 2 recurring monthly savings transfer(s) detected; Kate consultation on wealth preservation: \"What is the best way to save automatically every month for my children's higher education?\".",
     "detected_signals": [
       "Family household profile with dependent children",
       "Active rental housing baseline (Antwerp Living Immo)",
@@ -250,9 +235,9 @@
     "detected_intent": "buying_first_home",
     "confidence_score": 0.86,
     "intent_stage": "active_decision",
-    "last_updated": "2026-09-30T18:20:29.203610+00:00",
+    "last_updated": "2026-09-30T20:00:46.634Z",
     "kate_message": "Hi Mila, your home search is gathering momentum. Based on your recent simulations, you have strong borrowing capacity. Compare notary closing fees and explore pre-approved listings today.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 10 corroborated data points across profile, transactions, and in-app tools: Family household profile with dependent children; Healthy savings buffer of €28,400; 2 property appraisal / surveyor inspection transaction(s) logged; Active premium property search alert subscriptions (Immoweb Alert Pro).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 10 evidence indicators across banking history, interactions, and financial profile: Family household profile with dependent children; Healthy savings buffer of €28,400; 2 property appraisal / surveyor inspection transaction(s) logged; Active premium property search alert subscriptions (Immoweb Alert Pro).",
     "detected_signals": [
       "Family household profile with dependent children",
       "Healthy savings buffer of €28,400",
@@ -261,7 +246,7 @@
       "Renovation / home improvement hardware expenses detected (2 txs)",
       "Active rental housing baseline (Rentify Leuven)",
       "2 recurring monthly savings transfer(s) detected",
-      "1x mortgage simulation(s) consulted (latest: €340,000 loan over 25 yrs, €1645/mo)",
+      "1x mortgage simulation(s) consulted (latest: €340,000 loan over 25 yrs, €1,645/mo)",
       "Kate consultation on property purchasing: \"Can we lock the interest rate while we submit our bid for the house in Kessel-Lo?\"",
       "Family liability & estate preservation insurance quote viewed"
     ],
@@ -277,7 +262,7 @@
       "2 recurring monthly savings transfer(s) detected"
     ],
     "interaction_signals": [
-      "1x mortgage simulation(s) consulted (latest: €340,000 loan over 25 yrs, €1645/mo)",
+      "1x mortgage simulation(s) consulted (latest: €340,000 loan over 25 yrs, €1,645/mo)",
       "Kate consultation on property purchasing: \"Can we lock the interest rate while we submit our bid for the house in Kessel-Lo?\"",
       "Family liability & estate preservation insurance quote viewed"
     ],
@@ -332,9 +317,9 @@
     "detected_intent": "freelance_entrepreneur",
     "confidence_score": 0.96,
     "intent_stage": "action_ready",
-    "last_updated": "2026-09-30T18:20:29.203987+00:00",
+    "last_updated": "2026-09-30T20:00:46.636Z",
     "kate_message": "Hi Omar, your independent business cashflow is thriving! Activate our automated 3-way treasury split to isolate VAT & taxes automatically, and secure comprehensive professional indemnity.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 11 corroborated data points across profile, transactions, and in-app tools: Independent professional career track (Freelance Software Engineer); Substantial savings reserve of €61,200 ready for deployment; Active rental housing baseline (Silversquare Coworking Brussels); Recurring commercial client invoice inflows (€11,000 across 3 transactions).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 11 evidence indicators across banking history, interactions, and financial profile: Independent professional career track (Freelance Software Engineer); Substantial savings reserve of €61,200 ready for deployment; Active rental housing baseline (Silversquare Coworking Brussels); Recurring commercial client invoice inflows (€11,000 across 3 transactions).",
     "detected_signals": [
       "Independent professional career track (Freelance Software Engineer)",
       "Substantial savings reserve of €61,200 ready for deployment",
@@ -344,7 +329,7 @@
       "Professional accounting and corporate fiscal filings (BDO Belgium Tax Advisory)",
       "Business operations tools and dedicated workspace memberships",
       "2 recurring monthly savings transfer(s) detected",
-      "Kate consultation on freelance fiscal optimization: \"How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Freelance income protection & continuity insurance quote viewed"
     ],
@@ -361,7 +346,7 @@
       "2 recurring monthly savings transfer(s) detected"
     ],
     "interaction_signals": [
-      "Kate consultation on freelance fiscal optimization: \"How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Freelance income protection & continuity insurance quote viewed"
     ],
@@ -416,16 +401,16 @@
     "detected_intent": "wealth_accumulator",
     "confidence_score": 0.96,
     "intent_stage": "action_ready",
-    "last_updated": "2026-09-30T18:20:29.204384+00:00",
+    "last_updated": "2026-09-30T20:00:46.640Z",
     "kate_message": "Hello Els, your accumulated capital of €118,500 provides strong wealth-building momentum. Schedule a dedicated Private Banking session to optimize Flemish inheritance succession and ESG portfolio allocations.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 8 corroborated data points across profile, transactions, and in-app tools: High-net-worth liquid savings buffer of €118,500; High monthly net income (€6,100/mo) yields significant discretionary surplus; Notary consultation payment: Notariaat Mechelen-Noord (Family succession advisory & marital agreement review); Recurring commercial client invoice inflows (€450 across 1 transactions).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 8 evidence indicators across banking history, interactions, and financial profile: High-net-worth liquid savings buffer of €118,500; High monthly net income (€6,100/mo) yields significant discretionary surplus; Notary consultation payment: Notariaat Mechelen-Noord (Family succession advisory & marital agreement review); Recurring commercial client invoice inflows (€450 across 1 transactions).",
     "detected_signals": [
       "High-net-worth liquid savings buffer of €118,500",
       "High monthly net income (€6,100/mo) yields significant discretionary surplus",
       "Notary consultation payment: Notariaat Mechelen-Noord (Family succession advisory & marital agreement review)",
       "Recurring commercial client invoice inflows (€450 across 1 transactions)",
       "4 dedicated investment/pension fund allocations detected (KBC Wealth Plan Horizon)",
-      "Kate consultation on freelance fiscal optimization: \"How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?\"",
       "Portfolio builder explored: Balanced sustainable wealth accumulation",
       "Family liability & estate preservation insurance quote viewed"
     ],
@@ -439,7 +424,7 @@
       "4 dedicated investment/pension fund allocations detected (KBC Wealth Plan Horizon)"
     ],
     "interaction_signals": [
-      "Kate consultation on freelance fiscal optimization: \"How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?\"",
+      "Kate consultation on freelance fiscal strategy: \"How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?\"",
       "Portfolio builder explored: Balanced sustainable wealth accumulation",
       "Family liability & estate preservation insurance quote viewed"
     ],
@@ -494,9 +479,9 @@
     "detected_intent": "buying_first_home",
     "confidence_score": 0.74,
     "intent_stage": "exploring",
-    "last_updated": "2026-09-30T18:20:29.204762+00:00",
+    "last_updated": "2026-09-30T20:00:46.641Z",
     "kate_message": "Hi Lucas, getting ready for your first home? Take advantage of the 3% Flemish registration tax rule and use our budget simulator to plan your down payment.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 7 corroborated data points across profile, transactions, and in-app tools: Starter profile stage (young_starter) correlates with first property acquisition; Active premium property search alert subscriptions (Zimmo Immo Alert); Active rental housing baseline (Gent Koophandelsplein Immo); 2 recurring monthly savings transfer(s) detected.",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 7 evidence indicators across banking history, interactions, and financial profile: Starter profile stage (young_starter) correlates with first property acquisition; Active premium property search alert subscriptions (Zimmo Immo Alert); Active rental housing baseline (Gent Koophandelsplein Immo); 2 recurring monthly savings transfer(s) detected.",
     "detected_signals": [
       "Starter profile stage (young_starter) correlates with first property acquisition",
       "Active premium property search alert subscriptions (Zimmo Immo Alert)",
@@ -570,9 +555,9 @@
     "detected_intent": "wealth_accumulator",
     "confidence_score": 0.96,
     "intent_stage": "action_ready",
-    "last_updated": "2026-09-30T18:20:29.205293+00:00",
+    "last_updated": "2026-09-30T20:00:46.643Z",
     "kate_message": "Hello Dr., your accumulated capital of €185,000 provides strong wealth-building momentum. Schedule a dedicated Private Banking session to optimize Flemish inheritance succession and ESG portfolio allocations.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 9 corroborated data points across profile, transactions, and in-app tools: High-earning medical practitioner profile (Medical Specialist & Physician); High-net-worth liquid savings buffer of €185,000; High monthly net income (€8,700/mo) yields significant discretionary surplus; Notary consultation payment: Delen & Notarissen Leuven (Real estate patrimony holding structuring and gift deed prep).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 9 evidence indicators across banking history, interactions, and financial profile: High-earning medical practitioner profile (Medical Specialist & Physician); High-net-worth liquid savings buffer of €185,000; High monthly net income (€8,700/mo) yields significant discretionary surplus; Notary consultation payment: Delen & Notarissen Leuven (Real estate patrimony holding structuring and gift deed prep).",
     "detected_signals": [
       "High-earning medical practitioner profile (Medical Specialist & Physician)",
       "High-net-worth liquid savings buffer of €185,000",
@@ -650,9 +635,9 @@
     "detected_intent": "buying_first_home",
     "confidence_score": 0.86,
     "intent_stage": "active_decision",
-    "last_updated": "2026-09-30T18:20:29.205672+00:00",
+    "last_updated": "2026-09-30T20:00:46.645Z",
     "kate_message": "Hi Dries, your home search is gathering momentum. Based on your recent simulations, you have strong borrowing capacity. Compare notary closing fees and explore pre-approved listings today.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 10 corroborated data points across profile, transactions, and in-app tools: Starter profile stage (dual_income_starters) correlates with first property acquisition; Substantial savings reserve of €52,000 ready for deployment; 1 property appraisal / surveyor inspection transaction(s) logged; Renovation / home improvement hardware expenses detected (5 txs).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 10 evidence indicators across banking history, interactions, and financial profile: Starter profile stage (dual_income_starters) correlates with first property acquisition; Substantial savings reserve of €52,000 ready for deployment; 1 property appraisal / surveyor inspection transaction(s) logged; Renovation / home improvement hardware expenses detected (5 txs).",
     "detected_signals": [
       "Starter profile stage (dual_income_starters) correlates with first property acquisition",
       "Substantial savings reserve of €52,000 ready for deployment",
@@ -660,7 +645,7 @@
       "Renovation / home improvement hardware expenses detected (5 txs)",
       "Active rental housing baseline (Dijle Properties Mechelen)",
       "2 recurring monthly savings transfer(s) detected",
-      "1x mortgage simulation(s) consulted (latest: €420,000 loan over 25 yrs, €1980/mo)",
+      "1x mortgage simulation(s) consulted (latest: €420,000 loan over 25 yrs, €1,980/mo)",
       "Green renovation loan & Flemish energy subsidy calculator consulted",
       "Kate consultation on property purchasing: \"Can we combine the KBC green renovation loan with the Flemish Mijn VerbouwPremie subsidy?\"",
       "Mandatory property insurance bundle quote viewed (all_risk_construction_and_renovation)"
@@ -676,7 +661,7 @@
       "2 recurring monthly savings transfer(s) detected"
     ],
     "interaction_signals": [
-      "1x mortgage simulation(s) consulted (latest: €420,000 loan over 25 yrs, €1980/mo)",
+      "1x mortgage simulation(s) consulted (latest: €420,000 loan over 25 yrs, €1,980/mo)",
       "Green renovation loan & Flemish energy subsidy calculator consulted",
       "Kate consultation on property purchasing: \"Can we combine the KBC green renovation loan with the Flemish Mijn VerbouwPremie subsidy?\"",
       "Mandatory property insurance bundle quote viewed (all_risk_construction_and_renovation)"
@@ -732,9 +717,9 @@
     "detected_intent": "freelance_entrepreneur",
     "confidence_score": 0.74,
     "intent_stage": "exploring",
-    "last_updated": "2026-09-30T18:20:29.206033+00:00",
+    "last_updated": "2026-09-30T20:00:46.647Z",
     "kate_message": "Hi Fatima, stepping into independent entrepreneurship? Discover our step-by-step Acerta starter pack and explore how to separate business expenses cleanly.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 7 corroborated data points across profile, transactions, and in-app tools: Independent professional career track (E-Commerce Founder & Retailer); Healthy savings buffer of €39,000; Recurring commercial client invoice inflows (€9,200 across 2 transactions); Social security contributions to Acerta Ondernemingsloket registered.",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 7 evidence indicators across banking history, interactions, and financial profile: Independent professional career track (E-Commerce Founder & Retailer); Healthy savings buffer of €39,000; Recurring commercial client invoice inflows (€9,200 across 2 transactions); Social security contributions to Acerta Ondernemingsloket registered.",
     "detected_signals": [
       "Independent professional career track (E-Commerce Founder & Retailer)",
       "Healthy savings buffer of €39,000",
@@ -808,9 +793,9 @@
     "detected_intent": "wealth_accumulator",
     "confidence_score": 0.86,
     "intent_stage": "active_decision",
-    "last_updated": "2026-09-30T18:20:29.206326+00:00",
+    "last_updated": "2026-09-30T20:00:46.649Z",
     "kate_message": "Hi Marc, put your discretionary cashflow to work with goal-based ESG portfolios and protect your household standard of living.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 9 corroborated data points across profile, transactions, and in-app tools: Pre-retirement life stage (age 61): focus on capital preservation and succession; High-net-worth liquid savings buffer of €142,000; High monthly net income (€5,600/mo) yields significant discretionary surplus; Notary consultation payment: Notaris Kantoor Hasselt Centrum (Consultation on succession tax planning and generation-skipping).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 9 evidence indicators across banking history, interactions, and financial profile: Pre-retirement life stage (age 61): focus on capital preservation and succession; High-net-worth liquid savings buffer of €142,000; High monthly net income (€5,600/mo) yields significant discretionary surplus; Notary consultation payment: Notaris Kantoor Hasselt Centrum (Consultation on succession tax planning and generation-skipping).",
     "detected_signals": [
       "Pre-retirement life stage (age 61): focus on capital preservation and succession",
       "High-net-worth liquid savings buffer of €142,000",
@@ -818,7 +803,7 @@
       "Notary consultation payment: Notaris Kantoor Hasselt Centrum (Consultation on succession tax planning and generation-skipping)",
       "1 recurring monthly savings transfer(s) detected",
       "3 dedicated investment/pension fund allocations detected (KBC Pension Savings Fund)",
-      "Kate consultation on freelance fiscal optimization: \"What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?\"",
+      "Kate consultation on freelance fiscal strategy: \"What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?\"",
       "Pension capital accumulation and annuity calculator consulted",
       "Portfolio builder explored: Capital Preservation & Defensive Dividend Yield"
     ],
@@ -833,7 +818,7 @@
       "3 dedicated investment/pension fund allocations detected (KBC Pension Savings Fund)"
     ],
     "interaction_signals": [
-      "Kate consultation on freelance fiscal optimization: \"What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?\"",
+      "Kate consultation on freelance fiscal strategy: \"What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?\"",
       "Pension capital accumulation and annuity calculator consulted",
       "Portfolio builder explored: Capital Preservation & Defensive Dividend Yield"
     ],
@@ -888,9 +873,9 @@
     "detected_intent": "freelance_entrepreneur",
     "confidence_score": 0.96,
     "intent_stage": "action_ready",
-    "last_updated": "2026-09-30T18:20:29.206849+00:00",
+    "last_updated": "2026-09-30T20:00:46.653Z",
     "kate_message": "Hi Sébastien, your independent business cashflow is thriving! Activate our automated 3-way treasury split to isolate VAT & taxes automatically, and secure comprehensive professional indemnity.",
-    "transparency_reason": "Why am I seeing this? KBC Signal Engine analyzed 13 corroborated data points across profile, transactions, and in-app tools: Independent professional career track (Cloud Infrastructure Architect); Healthy savings buffer of €44,500; High monthly net income (€5,800/mo) yields significant discretionary surplus; Active rental housing baseline (WeWork European Quarter Brussels).",
+    "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 13 evidence indicators across banking history, interactions, and financial profile: Independent professional career track (Cloud Infrastructure Architect); Healthy savings buffer of €44,500; High monthly net income (€5,800/mo) yields significant discretionary surplus; Active rental housing baseline (WeWork European Quarter Brussels).",
     "detected_signals": [
       "Independent professional career track (Cloud Infrastructure Architect)",
       "Healthy savings buffer of €44,500",
@@ -901,8 +886,8 @@
       "Professional accounting and corporate fiscal filings (KPMG Tax & Legal Brussels)",
       "Business operations tools and dedicated workspace memberships",
       "2 recurring monthly savings transfer(s) detected",
-      "Kate consultation on freelance fiscal optimization: \"Can my BV lease a zero-emission electric vehicle via KBC Autolease with 100% tax deductibility in 2026?\"",
-      "Kate consultation on freelance fiscal optimization: \"How do I activate the automatic Peppol e-invoicing link with Billit and Acerta inside KBC Mobile?\"",
+      "Kate consultation on freelance fiscal strategy: \"Can my BV lease a zero-emission electric vehicle via KBC Autolease with 100% tax deductibility in 2026?\"",
+      "Kate consultation on freelance fiscal strategy: \"How do I activate the automatic Peppol e-invoicing link with Billit and Acerta inside KBC Mobile?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Freelance income protection & continuity insurance quote viewed"
     ],
@@ -920,8 +905,8 @@
       "2 recurring monthly savings transfer(s) detected"
     ],
     "interaction_signals": [
-      "Kate consultation on freelance fiscal optimization: \"Can my BV lease a zero-emission electric vehicle via KBC Autolease with 100% tax deductibility in 2026?\"",
-      "Kate consultation on freelance fiscal optimization: \"How do I activate the automatic Peppol e-invoicing link with Billit and Acerta inside KBC Mobile?\"",
+      "Kate consultation on freelance fiscal strategy: \"Can my BV lease a zero-emission electric vehicle via KBC Autolease with 100% tax deductibility in 2026?\"",
+      "Kate consultation on freelance fiscal strategy: \"How do I activate the automatic Peppol e-invoicing link with Billit and Acerta inside KBC Mobile?\"",
       "KBC Business Account Plus & KBO/CBE corporate registry configurator viewed",
       "Freelance income protection & continuity insurance quote viewed"
     ],
