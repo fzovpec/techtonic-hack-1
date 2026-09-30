@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #030812;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 162, 224, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(0, 45, 90, 0.3) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #02060d 0%, #050d1a 100%);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars for inside phone frame and logs */
+.phone-scroll::-webkit-scrollbar,
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.phone-scroll::-webkit-scrollbar-track,
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.phone-scroll::-webkit-scrollbar-thumb,
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 162, 224, 0.3);
+  border-radius: 9999px;
+}
+.phone-scroll::-webkit-scrollbar-thumb:hover,
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 162, 224, 0.6);
+}
+
+/* Pulse animation for Kate Avatar */
+@keyframes kateOrbGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 162, 224, 0.6), inset 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 32px rgba(0, 210, 255, 0.9), inset 0 0 18px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.kate-avatar-glow {
+  animation: kateOrbGlow 3.2s ease-in-out infinite;
+}
+
+/* Pulsing radar ring */
+@keyframes radarPing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.radar-pulse {
+  animation: radarPing 2.5s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Glow shadow utilities */
+.shadow-glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(0, 162, 224, 0.35);
+}
+
+.shadow-glow-emerald {
+  box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.35);
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 0 25px -4px rgba(168, 85, 247, 0.35);
+}
+
+.shadow-phone-pro {
+  box-shadow: 
+    0 30px 80px -20px rgba(0, 20, 50, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 0 8px #0f172a,
+    0 0 0 10px #1e293b;
+}

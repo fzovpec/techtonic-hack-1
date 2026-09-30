@@ -1,0 +1,110 @@
+[
+  {
+    "id": "c-001",
+    "name": "Thomas De Smet",
+    "age": 27,
+    "profession": "Junior IT Consultant",
+    "monthly_income": 2650.0,
+    "savings_balance": 41650.0,
+    "current_life_stage": "young_professional_starter"
+  },
+  {
+    "id": "c-002",
+    "name": "Sarah Alami",
+    "age": 32,
+    "profession": "Freelance Marketing Strategist",
+    "monthly_income": 4100.0,
+    "savings_balance": 48000.0,
+    "current_life_stage": "independent_freelancer"
+  },
+  {
+    "id": "c-003",
+    "name": "Tom Peeters",
+    "age": 41,
+    "profession": "Logistics Coordinator",
+    "monthly_income": 3400.0,
+    "savings_balance": 19200.0,
+    "current_life_stage": "family_with_kids"
+  },
+  {
+    "id": "c-004",
+    "name": "Mila Vermeulen",
+    "age": 38,
+    "profession": "Primary School Teacher",
+    "monthly_income": 3250.0,
+    "savings_balance": 28400.0,
+    "current_life_stage": "family_with_kids"
+  },
+  {
+    "id": "c-005",
+    "name": "Omar Benali",
+    "age": 29,
+    "profession": "Freelance Software Engineer",
+    "monthly_income": 5400.0,
+    "savings_balance": 61200.0,
+    "current_life_stage": "independent_freelancer"
+  },
+  {
+    "id": "c-006",
+    "name": "Els De Wilde",
+    "age": 53,
+    "profession": "Operations Director",
+    "monthly_income": 6100.0,
+    "savings_balance": 118500.0,
+    "current_life_stage": "wealth_accumulator"
+  },
+  {
+    "id": "c-007",
+    "name": "Lucas Vandenberghe",
+    "age": 24,
+    "profession": "Junior Data Analyst",
+    "monthly_income": 2350.0,
+    "savings_balance": 12800.0,
+    "current_life_stage": "young_starter"
+  },
+  {
+    "id": "c-008",
+    "name": "Dr. Anouk Claes",
+    "age": 46,
+    "profession": "Medical Specialist & Physician",
+    "monthly_income": 8700.0,
+    "savings_balance": 185000.0,
+    "current_life_stage": "medical_professional"
+  },
+  {
+    "id": "c-009",
+    "name": "Dries & Chloé Meert",
+    "age": 34,
+    "profession": "Architect & Creative Director",
+    "monthly_income": 5100.0,
+    "savings_balance": 52000.0,
+    "current_life_stage": "dual_income_starters"
+  },
+  {
+    "id": "c-010",
+    "name": "Fatima Zahra",
+    "age": 36,
+    "profession": "E-Commerce Founder & Retailer",
+    "monthly_income": 4600.0,
+    "savings_balance": 39000.0,
+    "current_life_stage": "independent_freelancer"
+  },
+  {
+    "id": "c-011",
+    "name": "Marc Wouters",
+    "age": 61,
+    "profession": "Senior Plant Manager",
+    "monthly_income": 5600.0,
+    "savings_balance": 142000.0,
+    "current_life_stage": "pre_retirement"
+  },
+  {
+    "id": "c-012",
+    "name": "Sébastien Laurent",
+    "age": 31,
+    "profession": "Cloud Infrastructure Architect",
+    "monthly_income": 5800.0,
+    "savings_balance": 44500.0,
+    "current_life_stage": "independent_freelancer"
+  }
+]

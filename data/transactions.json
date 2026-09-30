@@ -1,0 +1,2189 @@
+[
+  {
+    "id": "tx-101",
+    "client_id": "c-001",
+    "timestamp": "2026-08-01T08:30:00Z",
+    "amount": 2650.0,
+    "merchant": "Capgemini Belgium",
+    "category": "salary",
+    "description": "Monthly salary August 2026"
+  },
+  {
+    "id": "tx-102",
+    "client_id": "c-001",
+    "timestamp": "2026-08-02T10:15:00Z",
+    "amount": -850.0,
+    "merchant": "Leuven City Apartments",
+    "category": "rent",
+    "description": "Monthly rent - Bondgenotenlaan"
+  },
+  {
+    "id": "tx-103",
+    "client_id": "c-001",
+    "timestamp": "2026-08-05T18:42:00Z",
+    "amount": -74.5,
+    "merchant": "Colruyt Supermarket",
+    "category": "daily_groceries",
+    "description": "Weekly grocery shopping"
+  },
+  {
+    "id": "tx-104",
+    "client_id": "c-001",
+    "timestamp": "2026-08-10T12:00:00Z",
+    "amount": -500.0,
+    "merchant": "KBC High-Yield Savings",
+    "category": "savings_deposit",
+    "description": "Automatic recurring monthly home savings"
+  },
+  {
+    "id": "tx-105",
+    "client_id": "c-001",
+    "timestamp": "2026-08-18T14:30:00Z",
+    "amount": -49.99,
+    "merchant": "Immoweb Real Estate Premium",
+    "category": "real_estate_platform",
+    "description": "Property alert subscription Leuven & outskirts"
+  },
+  {
+    "id": "tx-106",
+    "client_id": "c-001",
+    "timestamp": "2026-09-01T08:30:00Z",
+    "amount": 2650.0,
+    "merchant": "Capgemini Belgium",
+    "category": "salary",
+    "description": "Monthly salary September 2026"
+  },
+  {
+    "id": "tx-107",
+    "client_id": "c-001",
+    "timestamp": "2026-09-02T10:15:00Z",
+    "amount": -850.0,
+    "merchant": "Leuven City Apartments",
+    "category": "rent",
+    "description": "Monthly rent - Bondgenotenlaan"
+  },
+  {
+    "id": "tx-109",
+    "client_id": "c-001",
+    "timestamp": "2026-09-10T12:00:00Z",
+    "amount": -500.0,
+    "merchant": "KBC High-Yield Savings",
+    "category": "savings_deposit",
+    "description": "Automatic recurring monthly home savings"
+  },
+  {
+    "id": "tx-201",
+    "client_id": "c-002",
+    "timestamp": "2026-08-04T10:00:00Z",
+    "amount": 3800.0,
+    "merchant": "Studio Hyperdrive BV",
+    "category": "salary",
+    "description": "Invoice INV-2026-041 UX Design Sprint"
+  },
+  {
+    "id": "tx-202",
+    "client_id": "c-002",
+    "timestamp": "2026-08-08T09:30:00Z",
+    "amount": -320.0,
+    "merchant": "Fosbury & Sons Coworking",
+    "category": "rent",
+    "description": "Dedicated desk membership August"
+  },
+  {
+    "id": "tx-203",
+    "client_id": "c-002",
+    "timestamp": "2026-08-15T14:10:00Z",
+    "amount": -78.65,
+    "merchant": "Adobe Creative Cloud",
+    "category": "software_saas",
+    "description": "Monthly creative suite subscription"
+  },
+  {
+    "id": "tx-204",
+    "client_id": "c-002",
+    "timestamp": "2026-08-20T11:00:00Z",
+    "amount": -650.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Tax and liquidity reserve transfer"
+  },
+  {
+    "id": "tx-205",
+    "client_id": "c-002",
+    "timestamp": "2026-09-03T11:00:00Z",
+    "amount": 4200.0,
+    "merchant": "BrandCraft Ghent Agency",
+    "category": "salary",
+    "description": "Invoice INV-2026-048 Strategic Rebranding milestone"
+  },
+  {
+    "id": "tx-206",
+    "client_id": "c-002",
+    "timestamp": "2026-09-08T09:30:00Z",
+    "amount": -320.0,
+    "merchant": "Fosbury & Sons Coworking",
+    "category": "rent",
+    "description": "Dedicated desk membership September"
+  },
+  {
+    "id": "tx-207",
+    "client_id": "c-002",
+    "timestamp": "2026-09-12T16:20:00Z",
+    "amount": -820.0,
+    "merchant": "Acerta Social Insurance Fund",
+    "category": "social_contributions",
+    "description": "Q3 freelance social security contribution"
+  },
+  {
+    "id": "tx-208",
+    "client_id": "c-002",
+    "timestamp": "2026-09-15T18:00:00Z",
+    "amount": -85.0,
+    "merchant": "Delhaize Watersportbaan",
+    "category": "daily_groceries",
+    "description": "Groceries & household supplies"
+  },
+  {
+    "id": "tx-209",
+    "client_id": "c-002",
+    "timestamp": "2026-09-21T10:15:00Z",
+    "amount": -350.0,
+    "merchant": "Fiscaal Kantoor De Graeve",
+    "category": "accounting_tax",
+    "description": "Quarterly VAT filing and freelance fiscal optimization"
+  },
+  {
+    "id": "tx-210",
+    "client_id": "c-002",
+    "timestamp": "2026-09-25T14:30:00Z",
+    "amount": -800.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Monthly VAT buffer allocation"
+  },
+  {
+    "id": "tx-301",
+    "client_id": "c-003",
+    "timestamp": "2026-08-01T07:45:00Z",
+    "amount": 3400.0,
+    "merchant": "Katoen Natie NV",
+    "category": "salary",
+    "description": "Monthly wage August"
+  },
+  {
+    "id": "tx-302",
+    "client_id": "c-003",
+    "timestamp": "2026-08-03T12:00:00Z",
+    "amount": -980.0,
+    "merchant": "Antwerp Living Immo",
+    "category": "rent",
+    "description": "Monthly apartment rent"
+  },
+  {
+    "id": "tx-303",
+    "client_id": "c-003",
+    "timestamp": "2026-08-12T16:10:00Z",
+    "amount": -185.2,
+    "merchant": "Decathlon Sporting Goods",
+    "category": "daily_groceries",
+    "description": "Kids sports gear and bicycle helmets"
+  },
+  {
+    "id": "tx-304",
+    "client_id": "c-003",
+    "timestamp": "2026-08-18T19:30:00Z",
+    "amount": -142.3,
+    "merchant": "Colruyt Berchem",
+    "category": "daily_groceries",
+    "description": "Weekly family shopping"
+  },
+  {
+    "id": "tx-305",
+    "client_id": "c-003",
+    "timestamp": "2026-08-25T10:00:00Z",
+    "amount": -250.0,
+    "merchant": "KBC Children Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly future reserve for kids"
+  },
+  {
+    "id": "tx-306",
+    "client_id": "c-003",
+    "timestamp": "2026-09-01T07:45:00Z",
+    "amount": 3400.0,
+    "merchant": "Katoen Natie NV",
+    "category": "salary",
+    "description": "Monthly wage September"
+  },
+  {
+    "id": "tx-307",
+    "client_id": "c-003",
+    "timestamp": "2026-09-03T12:00:00Z",
+    "amount": -980.0,
+    "merchant": "Antwerp Living Immo",
+    "category": "rent",
+    "description": "Monthly apartment rent"
+  },
+  {
+    "id": "tx-308",
+    "client_id": "c-003",
+    "timestamp": "2026-09-14T11:30:00Z",
+    "amount": -210.0,
+    "merchant": "Stedelijk Onderwijs Antwerpen",
+    "category": "family_expenses",
+    "description": "School books and hot meals trimester 1"
+  },
+  {
+    "id": "tx-309",
+    "client_id": "c-003",
+    "timestamp": "2026-09-19T14:40:00Z",
+    "amount": -165.8,
+    "merchant": "Colruyt Berchem",
+    "category": "daily_groceries",
+    "description": "Weekly family shopping"
+  },
+  {
+    "id": "tx-310",
+    "client_id": "c-003",
+    "timestamp": "2026-09-25T10:00:00Z",
+    "amount": -250.0,
+    "merchant": "KBC Children Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly future reserve for kids"
+  },
+  {
+    "id": "tx-401",
+    "client_id": "c-004",
+    "timestamp": "2026-08-03T07:50:00Z",
+    "amount": 3250.0,
+    "merchant": "Flemish Education Network",
+    "category": "salary",
+    "description": "Monthly salary August 2026"
+  },
+  {
+    "id": "tx-402",
+    "client_id": "c-004",
+    "timestamp": "2026-08-04T09:00:00Z",
+    "amount": -1050.0,
+    "merchant": "Rentify Leuven",
+    "category": "rent",
+    "description": "Family apartment rent"
+  },
+  {
+    "id": "tx-403",
+    "client_id": "c-004",
+    "timestamp": "2026-08-14T18:05:00Z",
+    "amount": -240.0,
+    "merchant": "Decathlon Kids",
+    "category": "family_expenses",
+    "description": "School supplies and sports gear"
+  },
+  {
+    "id": "tx-404",
+    "client_id": "c-004",
+    "timestamp": "2026-08-20T12:00:00Z",
+    "amount": -600.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Dedicated monthly down payment reserve"
+  },
+  {
+    "id": "tx-405",
+    "client_id": "c-004",
+    "timestamp": "2026-09-03T07:50:00Z",
+    "amount": 3250.0,
+    "merchant": "Flemish Education Network",
+    "category": "salary",
+    "description": "Monthly salary September 2026"
+  },
+  {
+    "id": "tx-406",
+    "client_id": "c-004",
+    "timestamp": "2026-09-04T09:00:00Z",
+    "amount": -1050.0,
+    "merchant": "Rentify Leuven",
+    "category": "rent",
+    "description": "Family apartment rent"
+  },
+  {
+    "id": "tx-407",
+    "client_id": "c-004",
+    "timestamp": "2026-09-08T15:20:00Z",
+    "amount": -35.0,
+    "merchant": "Immoweb Alert Pro",
+    "category": "real_estate_platform",
+    "description": "Saved search alerts for 3-bedroom houses in Kessel-Lo"
+  },
+  {
+    "id": "tx-408",
+    "client_id": "c-004",
+    "timestamp": "2026-09-15T17:30:00Z",
+    "amount": -380.0,
+    "merchant": "Architektenbureau Brabant",
+    "category": "surveyor",
+    "description": "Preliminary renovation feasibility estimate for prospective house"
+  },
+  {
+    "id": "tx-409",
+    "client_id": "c-004",
+    "timestamp": "2026-09-20T12:00:00Z",
+    "amount": -600.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Dedicated monthly down payment reserve"
+  },
+  {
+    "id": "tx-410",
+    "client_id": "c-004",
+    "timestamp": "2026-09-27T11:45:00Z",
+    "amount": -115.0,
+    "merchant": "Gamma Leuven",
+    "category": "renovation",
+    "description": "Home inspection moisture meter and laser measure"
+  },
+  {
+    "id": "tx-501",
+    "client_id": "c-005",
+    "timestamp": "2026-08-02T09:15:00Z",
+    "amount": 5400.0,
+    "merchant": "TechBridge Consulting BV",
+    "category": "income",
+    "description": "Invoice INV-2026-110 cloud backend sprint"
+  },
+  {
+    "id": "tx-502",
+    "client_id": "c-005",
+    "timestamp": "2026-08-05T14:00:00Z",
+    "amount": -410.0,
+    "merchant": "Silversquare Coworking Brussels",
+    "category": "rent",
+    "description": "Flex desk and meeting room pass"
+  },
+  {
+    "id": "tx-503",
+    "client_id": "c-005",
+    "timestamp": "2026-08-12T16:20:00Z",
+    "amount": -180.0,
+    "merchant": "Amazon Web Services EMEA",
+    "category": "software_saas",
+    "description": "Dev & testing cloud infrastructure"
+  },
+  {
+    "id": "tx-504",
+    "client_id": "c-005",
+    "timestamp": "2026-08-20T16:30:00Z",
+    "amount": -1800.0,
+    "merchant": "KBC Business Savings",
+    "category": "savings_deposit",
+    "description": "Reserve transfer to corporate tax buffer"
+  },
+  {
+    "id": "tx-505",
+    "client_id": "c-005",
+    "timestamp": "2026-09-02T09:15:00Z",
+    "amount": 5600.0,
+    "merchant": "FinTech Alliance London/Brussels",
+    "category": "income",
+    "description": "Invoice INV-2026-119 microservices architecture design"
+  },
+  {
+    "id": "tx-506",
+    "client_id": "c-005",
+    "timestamp": "2026-09-05T14:00:00Z",
+    "amount": -410.0,
+    "merchant": "Silversquare Coworking Brussels",
+    "category": "rent",
+    "description": "Flex desk and meeting room pass"
+  },
+  {
+    "id": "tx-507",
+    "client_id": "c-005",
+    "timestamp": "2026-09-11T13:40:00Z",
+    "amount": -920.0,
+    "merchant": "Acerta Social Insurance Fund",
+    "category": "social_contributions",
+    "description": "Quarterly freelance contribution Q3"
+  },
+  {
+    "id": "tx-508",
+    "client_id": "c-005",
+    "timestamp": "2026-09-18T10:00:00Z",
+    "amount": -450.0,
+    "merchant": "BDO Belgium Tax Advisory",
+    "category": "accounting_tax",
+    "description": "Corporate conversion feasibility assessment (sole to BV)"
+  },
+  {
+    "id": "tx-509",
+    "client_id": "c-005",
+    "timestamp": "2026-09-20T16:30:00Z",
+    "amount": -2000.0,
+    "merchant": "KBC Business Savings",
+    "category": "savings_deposit",
+    "description": "Reserve transfer to corporate tax buffer"
+  },
+  {
+    "id": "tx-510",
+    "client_id": "c-005",
+    "timestamp": "2026-09-28T18:15:00Z",
+    "amount": -145.0,
+    "merchant": "Brasserie des Colonies Brussels",
+    "category": "daily_groceries",
+    "description": "Client sprint review dinner"
+  },
+  {
+    "id": "tx-601",
+    "client_id": "c-006",
+    "timestamp": "2026-08-01T08:05:00Z",
+    "amount": 6100.0,
+    "merchant": "Transport & Logistics Group NV",
+    "category": "salary",
+    "description": "Executive salary August 2026"
+  },
+  {
+    "id": "tx-602",
+    "client_id": "c-006",
+    "timestamp": "2026-08-06T11:45:00Z",
+    "amount": -2500.0,
+    "merchant": "KBC Wealth Plan Horizon",
+    "category": "investment",
+    "description": "Recurring automated investment contribution"
+  },
+  {
+    "id": "tx-603",
+    "client_id": "c-006",
+    "timestamp": "2026-08-15T15:20:00Z",
+    "amount": -220.0,
+    "merchant": "Delhaize Proxy Keerbergen",
+    "category": "daily_groceries",
+    "description": "Gourmet groceries & household supplies"
+  },
+  {
+    "id": "tx-604",
+    "client_id": "c-006",
+    "timestamp": "2026-08-28T10:00:00Z",
+    "amount": 450.0,
+    "merchant": "KBC High-Yield Term Deposit",
+    "category": "investment",
+    "description": "Semi-annual fixed interest coupon payout"
+  },
+  {
+    "id": "tx-605",
+    "client_id": "c-006",
+    "timestamp": "2026-09-01T08:05:00Z",
+    "amount": 6100.0,
+    "merchant": "Transport & Logistics Group NV",
+    "category": "salary",
+    "description": "Executive salary September 2026"
+  },
+  {
+    "id": "tx-606",
+    "client_id": "c-006",
+    "timestamp": "2026-09-06T11:45:00Z",
+    "amount": -2500.0,
+    "merchant": "KBC Wealth Plan Horizon",
+    "category": "investment",
+    "description": "Recurring automated investment contribution"
+  },
+  {
+    "id": "tx-607",
+    "client_id": "c-006",
+    "timestamp": "2026-09-16T19:25:00Z",
+    "amount": -420.0,
+    "merchant": "Home & Family Insurance KBC",
+    "category": "insurance",
+    "description": "Annual comprehensive household and civil liability"
+  },
+  {
+    "id": "tx-608",
+    "client_id": "c-006",
+    "timestamp": "2026-09-22T14:00:00Z",
+    "amount": -5000.0,
+    "merchant": "KBC Bolero Brokerage",
+    "category": "investment",
+    "description": "Lump sum allocation to Euro Stoxx Sustainability Leaders ETF"
+  },
+  {
+    "id": "tx-609",
+    "client_id": "c-006",
+    "timestamp": "2026-09-26T16:30:00Z",
+    "amount": -650.0,
+    "merchant": "Notariaat Mechelen-Noord",
+    "category": "notary",
+    "description": "Family succession advisory & marital agreement review"
+  },
+  {
+    "id": "tx-701",
+    "client_id": "c-007",
+    "timestamp": "2026-08-01T08:15:00Z",
+    "amount": 2350.0,
+    "merchant": "Proximus Enterprise",
+    "category": "salary",
+    "description": "Monthly salary August 2026"
+  },
+  {
+    "id": "tx-702",
+    "client_id": "c-007",
+    "timestamp": "2026-08-03T10:00:00Z",
+    "amount": -720.0,
+    "merchant": "Gent Koophandelsplein Immo",
+    "category": "rent",
+    "description": "Studio rental August"
+  },
+  {
+    "id": "tx-703",
+    "client_id": "c-007",
+    "timestamp": "2026-08-08T18:30:00Z",
+    "amount": -58.2,
+    "merchant": "Albert Heijn Korenmarkt",
+    "category": "daily_groceries",
+    "description": "Weekly grocery run"
+  },
+  {
+    "id": "tx-704",
+    "client_id": "c-007",
+    "timestamp": "2026-08-15T12:00:00Z",
+    "amount": -400.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "High-interest starter savings transfer"
+  },
+  {
+    "id": "tx-705",
+    "client_id": "c-007",
+    "timestamp": "2026-09-01T08:15:00Z",
+    "amount": 2350.0,
+    "merchant": "Proximus Enterprise",
+    "category": "salary",
+    "description": "Monthly salary September 2026"
+  },
+  {
+    "id": "tx-706",
+    "client_id": "c-007",
+    "timestamp": "2026-09-03T10:00:00Z",
+    "amount": -720.0,
+    "merchant": "Gent Koophandelsplein Immo",
+    "category": "rent",
+    "description": "Studio rental September"
+  },
+  {
+    "id": "tx-707",
+    "client_id": "c-007",
+    "timestamp": "2026-09-09T14:15:00Z",
+    "amount": -45.0,
+    "merchant": "Cambio Carsharing Flanders",
+    "category": "mobility",
+    "description": "Weekend car rental for Ghent property viewings"
+  },
+  {
+    "id": "tx-708",
+    "client_id": "c-007",
+    "timestamp": "2026-09-15T12:00:00Z",
+    "amount": -400.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "High-interest starter savings transfer"
+  },
+  {
+    "id": "tx-709",
+    "client_id": "c-007",
+    "timestamp": "2026-09-21T19:00:00Z",
+    "amount": -29.99,
+    "merchant": "Zimmo Immo Alert",
+    "category": "real_estate_platform",
+    "description": "Starter 1-bedroom flat alert subscription East Flanders"
+  },
+  {
+    "id": "tx-710",
+    "client_id": "c-007",
+    "timestamp": "2026-09-28T09:30:00Z",
+    "amount": -85.0,
+    "merchant": "NMBS/SNCB Train Subscriptions",
+    "category": "mobility",
+    "description": "Commuter train pass Ghent-Brussels"
+  },
+  {
+    "id": "tx-801",
+    "client_id": "c-008",
+    "timestamp": "2026-08-05T09:00:00Z",
+    "amount": 8700.0,
+    "merchant": "UZ Leuven Medical Staff Group",
+    "category": "salary",
+    "description": "Specialist medical honoraria August"
+  },
+  {
+    "id": "tx-802",
+    "client_id": "c-008",
+    "timestamp": "2026-08-10T11:00:00Z",
+    "amount": -3500.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Automated monthly private wealth allocation"
+  },
+  {
+    "id": "tx-803",
+    "client_id": "c-008",
+    "timestamp": "2026-08-16T14:30:00Z",
+    "amount": -1450.0,
+    "merchant": "Acerta Physicians Social Fund",
+    "category": "social_contributions",
+    "description": "Quarterly social contributions doctors quota"
+  },
+  {
+    "id": "tx-804",
+    "client_id": "c-008",
+    "timestamp": "2026-08-25T17:00:00Z",
+    "amount": -680.0,
+    "merchant": "Amma Verzekeringen Artsen",
+    "category": "insurance",
+    "description": "Medical professional liability coverage premium"
+  },
+  {
+    "id": "tx-805",
+    "client_id": "c-008",
+    "timestamp": "2026-09-05T09:00:00Z",
+    "amount": 8700.0,
+    "merchant": "UZ Leuven Medical Staff Group",
+    "category": "salary",
+    "description": "Specialist medical honoraria September"
+  },
+  {
+    "id": "tx-806",
+    "client_id": "c-008",
+    "timestamp": "2026-09-10T11:00:00Z",
+    "amount": -3500.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Automated monthly private wealth allocation"
+  },
+  {
+    "id": "tx-807",
+    "client_id": "c-008",
+    "timestamp": "2026-09-18T16:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Private Pension IPT",
+    "category": "pension_savings",
+    "description": "Individual Pension Agreement tax-deductible ceiling deposit"
+  },
+  {
+    "id": "tx-808",
+    "client_id": "c-008",
+    "timestamp": "2026-09-23T15:20:00Z",
+    "amount": -750.0,
+    "merchant": "Delen & Notarissen Leuven",
+    "category": "notary",
+    "description": "Real estate patrimony holding structuring and gift deed prep"
+  },
+  {
+    "id": "tx-809",
+    "client_id": "c-008",
+    "timestamp": "2026-09-27T20:10:00Z",
+    "amount": -310.0,
+    "merchant": "Rob The Gourmet Market",
+    "category": "daily_groceries",
+    "description": "Fine foods and household provision"
+  },
+  {
+    "id": "tx-901",
+    "client_id": "c-009",
+    "timestamp": "2026-08-02T10:00:00Z",
+    "amount": 5100.0,
+    "merchant": "Meert Architecture Studio BV",
+    "category": "salary",
+    "description": "Monthly partner drawings August 2026"
+  },
+  {
+    "id": "tx-902",
+    "client_id": "c-009",
+    "timestamp": "2026-08-04T12:00:00Z",
+    "amount": -1350.0,
+    "merchant": "Dijle Properties Mechelen",
+    "category": "rent",
+    "description": "Loft apartment rent Mechelen centre"
+  },
+  {
+    "id": "tx-903",
+    "client_id": "c-009",
+    "timestamp": "2026-08-12T15:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Target Home Savings",
+    "category": "savings_deposit",
+    "description": "Monthly down payment & renovation fund"
+  },
+  {
+    "id": "tx-904",
+    "client_id": "c-009",
+    "timestamp": "2026-08-20T17:40:00Z",
+    "amount": -185.0,
+    "merchant": "Ikea Zaventem",
+    "category": "daily_groceries",
+    "description": "Kitchen planning samples and storage fittings"
+  },
+  {
+    "id": "tx-905",
+    "client_id": "c-009",
+    "timestamp": "2026-09-02T10:00:00Z",
+    "amount": 5100.0,
+    "merchant": "Meert Architecture Studio BV",
+    "category": "salary",
+    "description": "Monthly partner drawings September 2026"
+  },
+  {
+    "id": "tx-906",
+    "client_id": "c-009",
+    "timestamp": "2026-09-04T12:00:00Z",
+    "amount": -1350.0,
+    "merchant": "Dijle Properties Mechelen",
+    "category": "rent",
+    "description": "Loft apartment rent Mechelen centre"
+  },
+  {
+    "id": "tx-907",
+    "client_id": "c-009",
+    "timestamp": "2026-09-10T14:30:00Z",
+    "amount": -550.0,
+    "merchant": "Fluvius & Zero-Emission Audit",
+    "category": "renovation",
+    "description": "Comprehensive EPC Energy label audit and heat pump scan"
+  },
+  {
+    "id": "tx-908",
+    "client_id": "c-009",
+    "timestamp": "2026-09-12T15:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Target Home Savings",
+    "category": "savings_deposit",
+    "description": "Monthly down payment & renovation fund"
+  },
+  {
+    "id": "tx-909",
+    "client_id": "c-009",
+    "timestamp": "2026-09-18T11:15:00Z",
+    "amount": -480.0,
+    "merchant": "Landmeetkunde Mechelen NV",
+    "category": "surveyor",
+    "description": "Topographical survey and building stability audit"
+  },
+  {
+    "id": "tx-910",
+    "client_id": "c-009",
+    "timestamp": "2026-09-24T16:20:00Z",
+    "amount": -340.0,
+    "merchant": "Brico Plan-It Mechelen",
+    "category": "renovation",
+    "description": "Insulation materials and demo equipment"
+  },
+  {
+    "id": "tx-1001",
+    "client_id": "c-010",
+    "timestamp": "2026-08-03T11:00:00Z",
+    "amount": 4400.0,
+    "merchant": "Shopify / Stripe Merchant Payout",
+    "category": "income",
+    "description": "E-commerce payouts sales batch August"
+  },
+  {
+    "id": "tx-1002",
+    "client_id": "c-010",
+    "timestamp": "2026-08-08T14:00:00Z",
+    "amount": -650.0,
+    "merchant": "bpost Parcels Corporate",
+    "category": "business_expense",
+    "description": "Shipping labels and parcel delivery bulk volume"
+  },
+  {
+    "id": "tx-1003",
+    "client_id": "c-010",
+    "timestamp": "2026-08-15T10:30:00Z",
+    "amount": -900.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Quarterly VAT buffer reservation"
+  },
+  {
+    "id": "tx-1004",
+    "client_id": "c-010",
+    "timestamp": "2026-08-22T16:45:00Z",
+    "amount": -125.0,
+    "merchant": "Klaverblad Verzekeringen",
+    "category": "insurance",
+    "description": "Commercial inventory and fire protection"
+  },
+  {
+    "id": "tx-1005",
+    "client_id": "c-010",
+    "timestamp": "2026-09-03T11:00:00Z",
+    "amount": 4800.0,
+    "merchant": "Shopify / Stripe Merchant Payout",
+    "category": "income",
+    "description": "E-commerce payouts sales batch September"
+  },
+  {
+    "id": "tx-1006",
+    "client_id": "c-010",
+    "timestamp": "2026-09-07T13:15:00Z",
+    "amount": -780.0,
+    "merchant": "bpost Parcels Corporate",
+    "category": "business_expense",
+    "description": "Shipping labels and parcel delivery bulk volume"
+  },
+  {
+    "id": "tx-1007",
+    "client_id": "c-010",
+    "timestamp": "2026-09-12T10:00:00Z",
+    "amount": -890.0,
+    "merchant": "Acerta Ondernemingsloket",
+    "category": "social_contributions",
+    "description": "Q3 social security & trade register renewal"
+  },
+  {
+    "id": "tx-1008",
+    "client_id": "c-010",
+    "timestamp": "2026-09-15T10:30:00Z",
+    "amount": -1100.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Quarterly VAT buffer reservation"
+  },
+  {
+    "id": "tx-1009",
+    "client_id": "c-010",
+    "timestamp": "2026-09-22T15:00:00Z",
+    "amount": -220.0,
+    "merchant": "Mollie Payments Gateway",
+    "category": "software_saas",
+    "description": "Bancontact & Payconiq processing fees"
+  },
+  {
+    "id": "tx-1101",
+    "client_id": "c-011",
+    "timestamp": "2026-08-01T08:00:00Z",
+    "amount": 5600.0,
+    "merchant": "TotalEnergies Petrochemical NV",
+    "category": "salary",
+    "description": "Senior management salary August"
+  },
+  {
+    "id": "tx-1102",
+    "client_id": "c-011",
+    "timestamp": "2026-08-07T11:30:00Z",
+    "amount": -1800.0,
+    "merchant": "KBC Pension Savings Fund",
+    "category": "pension_savings",
+    "description": "Maximum ceiling pension accumulation transfer"
+  },
+  {
+    "id": "tx-1103",
+    "client_id": "c-011",
+    "timestamp": "2026-08-14T15:00:00Z",
+    "amount": -850.0,
+    "merchant": "KBC Safe & Sound Investment",
+    "category": "investment",
+    "description": "Capital protected bond fund allocation"
+  },
+  {
+    "id": "tx-1104",
+    "client_id": "c-011",
+    "timestamp": "2026-08-20T17:30:00Z",
+    "amount": -195.0,
+    "merchant": "Delhaize Hasselt",
+    "category": "daily_groceries",
+    "description": "Weekly grocery purchase"
+  },
+  {
+    "id": "tx-1105",
+    "client_id": "c-011",
+    "timestamp": "2026-09-01T08:00:00Z",
+    "amount": 5600.0,
+    "merchant": "TotalEnergies Petrochemical NV",
+    "category": "salary",
+    "description": "Senior management salary September"
+  },
+  {
+    "id": "tx-1106",
+    "client_id": "c-011",
+    "timestamp": "2026-09-07T11:30:00Z",
+    "amount": -1800.0,
+    "merchant": "KBC Pension Savings Fund",
+    "category": "pension_savings",
+    "description": "Maximum ceiling pension accumulation transfer"
+  },
+  {
+    "id": "tx-1107",
+    "client_id": "c-011",
+    "timestamp": "2026-09-15T14:00:00Z",
+    "amount": -550.0,
+    "merchant": "KBC Autolease Hybrid Protection",
+    "category": "insurance",
+    "description": "Omnium motor vehicle and civil liability policy"
+  },
+  {
+    "id": "tx-1108",
+    "client_id": "c-011",
+    "timestamp": "2026-09-20T10:00:00Z",
+    "amount": -3000.0,
+    "merchant": "KBC Junior Gift Savings Transfer",
+    "category": "savings_deposit",
+    "description": "Grandchildren future education contribution"
+  },
+  {
+    "id": "tx-1109",
+    "client_id": "c-011",
+    "timestamp": "2026-09-26T16:00:00Z",
+    "amount": -450.0,
+    "merchant": "Notaris Kantoor Hasselt Centrum",
+    "category": "notary",
+    "description": "Consultation on succession tax planning and generation-skipping"
+  },
+  {
+    "id": "tx-1201",
+    "client_id": "c-012",
+    "timestamp": "2026-08-03T10:15:00Z",
+    "amount": 5800.0,
+    "merchant": "European Commission Cloud Services",
+    "category": "income",
+    "description": "Invoice INV-2026-088 DevOps architecture sprint"
+  },
+  {
+    "id": "tx-1202",
+    "client_id": "c-012",
+    "timestamp": "2026-08-06T14:00:00Z",
+    "amount": -480.0,
+    "merchant": "WeWork European Quarter Brussels",
+    "category": "rent",
+    "description": "Dedicated corporate desk Brussels"
+  },
+  {
+    "id": "tx-1203",
+    "client_id": "c-012",
+    "timestamp": "2026-08-15T11:00:00Z",
+    "amount": -1900.0,
+    "merchant": "KBC Tax & VAT Automated Reserve",
+    "category": "savings_deposit",
+    "description": "Automated 33% tax split from client revenue"
+  },
+  {
+    "id": "tx-1204",
+    "client_id": "c-012",
+    "timestamp": "2026-08-25T16:30:00Z",
+    "amount": -780.0,
+    "merchant": "KBC Autolease EV Business",
+    "category": "mobility",
+    "description": "Monthly operational lease Tesla Model Y Enterprise"
+  },
+  {
+    "id": "tx-1205",
+    "client_id": "c-012",
+    "timestamp": "2026-09-03T10:15:00Z",
+    "amount": 6200.0,
+    "merchant": "NATO Communications & Information Agency",
+    "category": "income",
+    "description": "Invoice INV-2026-095 Secure infrastructure audit"
+  },
+  {
+    "id": "tx-1206",
+    "client_id": "c-012",
+    "timestamp": "2026-09-06T14:00:00Z",
+    "amount": -480.0,
+    "merchant": "WeWork European Quarter Brussels",
+    "category": "rent",
+    "description": "Dedicated corporate desk Brussels"
+  },
+  {
+    "id": "tx-1207",
+    "client_id": "c-012",
+    "timestamp": "2026-09-12T13:30:00Z",
+    "amount": -950.0,
+    "merchant": "Acerta Social Insurance Fund",
+    "category": "social_contributions",
+    "description": "Q3 freelance social insurance contribution"
+  },
+  {
+    "id": "tx-1208",
+    "client_id": "c-012",
+    "timestamp": "2026-09-15T11:00:00Z",
+    "amount": -2100.0,
+    "merchant": "KBC Tax & VAT Automated Reserve",
+    "category": "savings_deposit",
+    "description": "Automated 33% tax split from client revenue"
+  },
+  {
+    "id": "tx-1209",
+    "client_id": "c-012",
+    "timestamp": "2026-09-22T17:00:00Z",
+    "amount": -780.0,
+    "merchant": "KBC Autolease EV Business",
+    "category": "mobility",
+    "description": "Monthly operational lease Tesla Model Y Enterprise"
+  },
+  {
+    "id": "tx-1210",
+    "client_id": "c-012",
+    "timestamp": "2026-09-27T10:30:00Z",
+    "amount": -380.0,
+    "merchant": "KPMG Tax & Legal Brussels",
+    "category": "accounting_tax",
+    "description": "Optimization of freelance director remuneration & copyright ruling"
+  },
+  {
+    "id": "tx-1301",
+    "client_id": "c-013",
+    "timestamp": "2026-08-01T08:15:00Z",
+    "amount": 2800.0,
+    "merchant": "KU Leuven Biomedical Research",
+    "category": "salary",
+    "description": "Monthly researcher salary August"
+  },
+  {
+    "id": "tx-1302",
+    "client_id": "c-013",
+    "timestamp": "2026-08-03T11:00:00Z",
+    "amount": -820.0,
+    "merchant": "Immo Leuven Residenties",
+    "category": "rent",
+    "description": "Apartment rental Naamsestraat"
+  },
+  {
+    "id": "tx-1303",
+    "client_id": "c-013",
+    "timestamp": "2026-08-10T18:30:00Z",
+    "amount": -64.2,
+    "merchant": "Colruyt Leuven",
+    "category": "daily_groceries",
+    "description": "Weekly grocery shopping"
+  },
+  {
+    "id": "tx-1304",
+    "client_id": "c-013",
+    "timestamp": "2026-08-15T12:00:00Z",
+    "amount": -450.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "Automatic recurring monthly home savings"
+  },
+  {
+    "id": "tx-1305",
+    "client_id": "c-013",
+    "timestamp": "2026-08-22T14:40:00Z",
+    "amount": -39.99,
+    "merchant": "Immoweb Real Estate Alerts",
+    "category": "real_estate_platform",
+    "description": "Property alert subscription Leuven & Heverlee"
+  },
+  {
+    "id": "tx-1306",
+    "client_id": "c-013",
+    "timestamp": "2026-09-01T08:15:00Z",
+    "amount": 2800.0,
+    "merchant": "KU Leuven Biomedical Research",
+    "category": "salary",
+    "description": "Monthly researcher salary September"
+  },
+  {
+    "id": "tx-1307",
+    "client_id": "c-013",
+    "timestamp": "2026-09-03T11:00:00Z",
+    "amount": -820.0,
+    "merchant": "Immo Leuven Residenties",
+    "category": "rent",
+    "description": "Apartment rental Naamsestraat"
+  },
+  {
+    "id": "tx-1308",
+    "client_id": "c-013",
+    "timestamp": "2026-09-12T10:00:00Z",
+    "amount": -450.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "Automatic recurring monthly home savings"
+  },
+  {
+    "id": "tx-1309",
+    "client_id": "c-013",
+    "timestamp": "2026-09-18T16:15:00Z",
+    "amount": -45.0,
+    "merchant": "Cambio Carsharing",
+    "category": "mobility",
+    "description": "Weekend trip to visit apartment developments in Heverlee"
+  },
+  {
+    "id": "tx-1310",
+    "client_id": "c-013",
+    "timestamp": "2026-09-25T19:20:00Z",
+    "amount": -78.5,
+    "merchant": "Bio-Planet Leuven",
+    "category": "daily_groceries",
+    "description": "Organic groceries"
+  },
+  {
+    "id": "tx-1401",
+    "client_id": "c-014",
+    "timestamp": "2026-08-04T09:30:00Z",
+    "amount": 4200.0,
+    "merchant": "Vastgoed Renovatie Mechelen",
+    "category": "income",
+    "description": "Invoice INV-2026-062 Heat pump installation project"
+  },
+  {
+    "id": "tx-1402",
+    "client_id": "c-014",
+    "timestamp": "2026-08-08T11:00:00Z",
+    "amount": -650.0,
+    "merchant": "Wurth Belgium Tools & Fasteners",
+    "category": "business_expense",
+    "description": "Professional pipe fittings and press tools"
+  },
+  {
+    "id": "tx-1403",
+    "client_id": "c-014",
+    "timestamp": "2026-08-16T15:30:00Z",
+    "amount": -950.0,
+    "merchant": "KBC Autolease Van Business",
+    "category": "mobility",
+    "description": "Operational lease Peugeot Boxer service van"
+  },
+  {
+    "id": "tx-1404",
+    "client_id": "c-014",
+    "timestamp": "2026-08-25T10:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Quarterly VAT buffer allocation"
+  },
+  {
+    "id": "tx-1405",
+    "client_id": "c-014",
+    "timestamp": "2026-09-02T10:15:00Z",
+    "amount": 5100.0,
+    "merchant": "Bouwonderneming De Pauw BV",
+    "category": "income",
+    "description": "Invoice INV-2026-071 Apartment complex HVAC subcontracting"
+  },
+  {
+    "id": "tx-1406",
+    "client_id": "c-014",
+    "timestamp": "2026-09-07T14:20:00Z",
+    "amount": -890.0,
+    "merchant": "Acerta Ondernemersfonds",
+    "category": "social_contributions",
+    "description": "Q3 self-employed social security contribution"
+  },
+  {
+    "id": "tx-1407",
+    "client_id": "c-014",
+    "timestamp": "2026-09-12T16:00:00Z",
+    "amount": -320.0,
+    "merchant": "BDO Accounting & Fiscal Services",
+    "category": "accounting_tax",
+    "description": "Quarterly VAT return preparation and corporate tax prep"
+  },
+  {
+    "id": "tx-1408",
+    "client_id": "c-014",
+    "timestamp": "2026-09-18T11:45:00Z",
+    "amount": -480.0,
+    "merchant": "Daikin Belgium Supplies",
+    "category": "business_expense",
+    "description": "Heat pump heat exchangers inventory"
+  },
+  {
+    "id": "tx-1409",
+    "client_id": "c-014",
+    "timestamp": "2026-09-22T10:00:00Z",
+    "amount": -1400.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Quarterly VAT buffer allocation"
+  },
+  {
+    "id": "tx-1410",
+    "client_id": "c-014",
+    "timestamp": "2026-09-28T17:30:00Z",
+    "amount": -165.0,
+    "merchant": "Colruyt Mechelen",
+    "category": "daily_groceries",
+    "description": "Family grocery run"
+  },
+  {
+    "id": "tx-1501",
+    "client_id": "c-015",
+    "timestamp": "2026-08-01T08:00:00Z",
+    "amount": 6400.0,
+    "merchant": "Barco NV & Tractebel Engineering",
+    "category": "salary",
+    "description": "Combined monthly salary August"
+  },
+  {
+    "id": "tx-1502",
+    "client_id": "c-015",
+    "timestamp": "2026-08-03T10:30:00Z",
+    "amount": -1400.0,
+    "merchant": "Leuven Zuid Residenties",
+    "category": "rent",
+    "description": "Family townhouse rental August"
+  },
+  {
+    "id": "tx-1503",
+    "client_id": "c-015",
+    "timestamp": "2026-08-10T12:00:00Z",
+    "amount": -1400.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly down payment reserve for house purchase"
+  },
+  {
+    "id": "tx-1504",
+    "client_id": "c-015",
+    "timestamp": "2026-08-18T16:00:00Z",
+    "amount": -420.0,
+    "merchant": "Kinderdagverblijf De Pagadder",
+    "category": "family_expenses",
+    "description": "Daycare fees for 2 children"
+  },
+  {
+    "id": "tx-1505",
+    "client_id": "c-015",
+    "timestamp": "2026-09-01T08:00:00Z",
+    "amount": 6400.0,
+    "merchant": "Barco NV & Tractebel Engineering",
+    "category": "salary",
+    "description": "Combined monthly salary September"
+  },
+  {
+    "id": "tx-1506",
+    "client_id": "c-015",
+    "timestamp": "2026-09-03T10:30:00Z",
+    "amount": -1400.0,
+    "merchant": "Leuven Zuid Residenties",
+    "category": "rent",
+    "description": "Family townhouse rental September"
+  },
+  {
+    "id": "tx-1507",
+    "client_id": "c-015",
+    "timestamp": "2026-09-08T14:30:00Z",
+    "amount": -49.99,
+    "merchant": "Immoweb Premium Alerts",
+    "category": "real_estate_platform",
+    "description": "Alert notifications 4-bedroom house Leuven & Herent"
+  },
+  {
+    "id": "tx-1508",
+    "client_id": "c-015",
+    "timestamp": "2026-09-14T11:00:00Z",
+    "amount": -480.0,
+    "merchant": "Landmeter De Pauw & Zonen",
+    "category": "surveyor",
+    "description": "Boundary plot survey and property structural check"
+  },
+  {
+    "id": "tx-1509",
+    "client_id": "c-015",
+    "timestamp": "2026-09-18T12:00:00Z",
+    "amount": -1400.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly down payment reserve for house purchase"
+  },
+  {
+    "id": "tx-1510",
+    "client_id": "c-015",
+    "timestamp": "2026-09-26T17:45:00Z",
+    "amount": -260.0,
+    "merchant": "Brico Plan-It Korbeek-Lo",
+    "category": "renovation",
+    "description": "DIY home measuring, laser level, and safety gear"
+  },
+  {
+    "id": "tx-1601",
+    "client_id": "c-016",
+    "timestamp": "2026-08-01T09:00:00Z",
+    "amount": 4200.0,
+    "merchant": "Federale Pensioendienst FPD",
+    "category": "salary",
+    "description": "University civil service pension payout August"
+  },
+  {
+    "id": "tx-1602",
+    "client_id": "c-016",
+    "timestamp": "2026-08-06T11:00:00Z",
+    "amount": -1500.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Recurring private wealth portfolio allocation"
+  },
+  {
+    "id": "tx-1603",
+    "client_id": "c-016",
+    "timestamp": "2026-08-15T14:00:00Z",
+    "amount": 1250.0,
+    "merchant": "KBC Bolero Dividend Payouts",
+    "category": "investment",
+    "description": "Quarterly dividend yield distributions"
+  },
+  {
+    "id": "tx-1604",
+    "client_id": "c-016",
+    "timestamp": "2026-08-25T16:30:00Z",
+    "amount": -350.0,
+    "merchant": "KBC Home & Civil Liability",
+    "category": "insurance",
+    "description": "Annual comprehensive estate protection premium"
+  },
+  {
+    "id": "tx-1605",
+    "client_id": "c-016",
+    "timestamp": "2026-09-01T09:00:00Z",
+    "amount": 4200.0,
+    "merchant": "Federale Pensioendienst FPD",
+    "category": "salary",
+    "description": "University civil service pension payout September"
+  },
+  {
+    "id": "tx-1606",
+    "client_id": "c-016",
+    "timestamp": "2026-09-07T11:00:00Z",
+    "amount": -1500.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Recurring private wealth portfolio allocation"
+  },
+  {
+    "id": "tx-1607",
+    "client_id": "c-016",
+    "timestamp": "2026-09-15T15:00:00Z",
+    "amount": -850.0,
+    "merchant": "Notariskantoor Van Rymenant Gent",
+    "category": "notary",
+    "description": "Consultation on generation-skipping bank gifts and inheritance planning"
+  },
+  {
+    "id": "tx-1608",
+    "client_id": "c-016",
+    "timestamp": "2026-09-22T10:00:00Z",
+    "amount": -5000.0,
+    "merchant": "KBC Junior Gift Savings Transfer",
+    "category": "savings_deposit",
+    "description": "Grandchildren university foundation trust gift"
+  },
+  {
+    "id": "tx-1609",
+    "client_id": "c-016",
+    "timestamp": "2026-09-28T19:00:00Z",
+    "amount": -280.0,
+    "merchant": "Rob The Gourmet Market",
+    "category": "daily_groceries",
+    "description": "Fine foods and wine cellar replenishment"
+  },
+  {
+    "id": "tx-1701",
+    "client_id": "c-017",
+    "timestamp": "2026-08-01T08:30:00Z",
+    "amount": 2400.0,
+    "merchant": "ML6 Machine Learning Ghent",
+    "category": "salary",
+    "description": "Monthly frontend engineer salary August"
+  },
+  {
+    "id": "tx-1702",
+    "client_id": "c-017",
+    "timestamp": "2026-08-03T10:00:00Z",
+    "amount": -710.0,
+    "merchant": "Gent Living Studios",
+    "category": "rent",
+    "description": "Studio apartment rent Gent-Zuid"
+  },
+  {
+    "id": "tx-1703",
+    "client_id": "c-017",
+    "timestamp": "2026-08-10T17:45:00Z",
+    "amount": -52.3,
+    "merchant": "Albert Heijn Gent",
+    "category": "daily_groceries",
+    "description": "Weekly grocery essentials"
+  },
+  {
+    "id": "tx-1704",
+    "client_id": "c-017",
+    "timestamp": "2026-08-15T12:00:00Z",
+    "amount": -400.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "High-interest starter savings transfer"
+  },
+  {
+    "id": "tx-1705",
+    "client_id": "c-017",
+    "timestamp": "2026-09-01T08:30:00Z",
+    "amount": 2400.0,
+    "merchant": "ML6 Machine Learning Ghent",
+    "category": "salary",
+    "description": "Monthly frontend engineer salary September"
+  },
+  {
+    "id": "tx-1706",
+    "client_id": "c-017",
+    "timestamp": "2026-09-03T10:00:00Z",
+    "amount": -710.0,
+    "merchant": "Gent Living Studios",
+    "category": "rent",
+    "description": "Studio apartment rent Gent-Zuid"
+  },
+  {
+    "id": "tx-1707",
+    "client_id": "c-017",
+    "timestamp": "2026-09-11T14:00:00Z",
+    "amount": -29.99,
+    "merchant": "Zimmo Immo Alert Pro",
+    "category": "real_estate_platform",
+    "description": "Starter 1-bedroom flat alert subscription East Flanders"
+  },
+  {
+    "id": "tx-1708",
+    "client_id": "c-017",
+    "timestamp": "2026-09-15T12:00:00Z",
+    "amount": -400.0,
+    "merchant": "KBC Start2Save Account",
+    "category": "savings_deposit",
+    "description": "High-interest starter savings transfer"
+  },
+  {
+    "id": "tx-1709",
+    "client_id": "c-017",
+    "timestamp": "2026-09-24T09:15:00Z",
+    "amount": -42.0,
+    "merchant": "Cambio Carsharing",
+    "category": "mobility",
+    "description": "Car rental for weekend apartment viewings in Ghent"
+  },
+  {
+    "id": "tx-1801",
+    "client_id": "c-018",
+    "timestamp": "2026-08-05T09:00:00Z",
+    "amount": 9500.0,
+    "merchant": "Linklaters Advocates Brussels",
+    "category": "salary",
+    "description": "Partner profit distribution August 2026"
+  },
+  {
+    "id": "tx-1802",
+    "client_id": "c-018",
+    "timestamp": "2026-08-10T11:00:00Z",
+    "amount": -4000.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Automated private banking wealth accumulation mandate"
+  },
+  {
+    "id": "tx-1803",
+    "client_id": "c-018",
+    "timestamp": "2026-08-16T14:30:00Z",
+    "amount": -1480.0,
+    "merchant": "Acerta Lawyers Social Fund",
+    "category": "social_contributions",
+    "description": "Quarterly social security contributions bar quota"
+  },
+  {
+    "id": "tx-1804",
+    "client_id": "c-018",
+    "timestamp": "2026-08-25T17:00:00Z",
+    "amount": -950.0,
+    "merchant": "Amma Assurances Barreau",
+    "category": "insurance",
+    "description": "Professional indemnity & legal liability top-up"
+  },
+  {
+    "id": "tx-1805",
+    "client_id": "c-018",
+    "timestamp": "2026-09-05T09:00:00Z",
+    "amount": 9500.0,
+    "merchant": "Linklaters Advocates Brussels",
+    "category": "salary",
+    "description": "Partner profit distribution September 2026"
+  },
+  {
+    "id": "tx-1806",
+    "client_id": "c-018",
+    "timestamp": "2026-09-10T11:00:00Z",
+    "amount": -4000.0,
+    "merchant": "KBC Asset Management Privé",
+    "category": "investment",
+    "description": "Automated private banking wealth accumulation mandate"
+  },
+  {
+    "id": "tx-1807",
+    "client_id": "c-018",
+    "timestamp": "2026-09-18T16:00:00Z",
+    "amount": -1500.0,
+    "merchant": "KBC Private Pension IPT",
+    "category": "pension_savings",
+    "description": "Individual Pension Agreement tax-deductible ceiling deposit"
+  },
+  {
+    "id": "tx-1808",
+    "client_id": "c-018",
+    "timestamp": "2026-09-23T15:20:00Z",
+    "amount": -950.0,
+    "merchant": "Notaris De Groote Brussel",
+    "category": "notary",
+    "description": "Patrimonial holding structuring and family estate planning deed"
+  },
+  {
+    "id": "tx-1809",
+    "client_id": "c-018",
+    "timestamp": "2026-09-27T20:10:00Z",
+    "amount": -380.0,
+    "merchant": "Rob The Gourmet Market",
+    "category": "daily_groceries",
+    "description": "Fine foods and household provision"
+  },
+  {
+    "id": "tx-1901",
+    "client_id": "c-019",
+    "timestamp": "2026-08-01T08:00:00Z",
+    "amount": 5300.0,
+    "merchant": "Accenture Digital & Collibra",
+    "category": "salary",
+    "description": "Dual monthly salaries August"
+  },
+  {
+    "id": "tx-1902",
+    "client_id": "c-019",
+    "timestamp": "2026-08-03T10:00:00Z",
+    "amount": -1150.0,
+    "merchant": "Antwerp Loft Immo",
+    "category": "rent",
+    "description": "Apartment rental Het Zuid Antwerp"
+  },
+  {
+    "id": "tx-1903",
+    "client_id": "c-019",
+    "timestamp": "2026-08-10T12:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly down payment reserve"
+  },
+  {
+    "id": "tx-1904",
+    "client_id": "c-019",
+    "timestamp": "2026-08-20T14:30:00Z",
+    "amount": -480.0,
+    "merchant": "Landmeter & Expertises Antwerpen",
+    "category": "surveyor",
+    "description": "Townhouse structural survey and electrical audit"
+  },
+  {
+    "id": "tx-1905",
+    "client_id": "c-019",
+    "timestamp": "2026-09-01T08:00:00Z",
+    "amount": 5300.0,
+    "merchant": "Accenture Digital & Collibra",
+    "category": "salary",
+    "description": "Dual monthly salaries September"
+  },
+  {
+    "id": "tx-1906",
+    "client_id": "c-019",
+    "timestamp": "2026-09-03T10:00:00Z",
+    "amount": -1150.0,
+    "merchant": "Antwerp Loft Immo",
+    "category": "rent",
+    "description": "Apartment rental Het Zuid Antwerp"
+  },
+  {
+    "id": "tx-1907",
+    "client_id": "c-019",
+    "timestamp": "2026-09-10T12:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Home Savings Account",
+    "category": "savings_deposit",
+    "description": "Monthly down payment reserve"
+  },
+  {
+    "id": "tx-1908",
+    "client_id": "c-019",
+    "timestamp": "2026-09-21T15:30:00Z",
+    "amount": -18000.0,
+    "merchant": "Notariaat Antwerpen-Centrum",
+    "category": "notary",
+    "description": "Compromis voorschot 5% escrow deposit - Purchase Agreement Berchem"
+  },
+  {
+    "id": "tx-1909",
+    "client_id": "c-019",
+    "timestamp": "2026-09-25T11:00:00Z",
+    "amount": -450.0,
+    "merchant": "Ikea Wilrijk",
+    "category": "renovation",
+    "description": "Kitchen planning consultation and advance fittings"
+  },
+  {
+    "id": "tx-1910",
+    "client_id": "c-019",
+    "timestamp": "2026-09-28T18:00:00Z",
+    "amount": -140.0,
+    "merchant": "Brico Plan-It Borsbeek",
+    "category": "renovation",
+    "description": "Paint samples, laser measuring tool, and hardware"
+  },
+  {
+    "id": "tx-2001",
+    "client_id": "c-020",
+    "timestamp": "2026-08-04T10:00:00Z",
+    "amount": 4100.0,
+    "merchant": "Payconiq & Bancontact Settlement",
+    "category": "income",
+    "description": "Bakery POS terminal customer revenue August batch 1"
+  },
+  {
+    "id": "tx-2002",
+    "client_id": "c-020",
+    "timestamp": "2026-08-10T14:00:00Z",
+    "amount": -820.0,
+    "merchant": "Puratos Bakery Ingredients",
+    "category": "business_expense",
+    "description": "Flour, chocolate, and sourdough ingredients"
+  },
+  {
+    "id": "tx-2003",
+    "client_id": "c-020",
+    "timestamp": "2026-08-18T11:00:00Z",
+    "amount": -750.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Monthly VAT buffer allocation"
+  },
+  {
+    "id": "tx-2004",
+    "client_id": "c-020",
+    "timestamp": "2026-08-25T15:30:00Z",
+    "amount": -410.0,
+    "merchant": "Bongard Bakery Machinery Lease",
+    "category": "business_expense",
+    "description": "Deck oven commercial equipment lease"
+  },
+  {
+    "id": "tx-2005",
+    "client_id": "c-020",
+    "timestamp": "2026-09-02T10:00:00Z",
+    "amount": 4400.0,
+    "merchant": "Payconiq & Bancontact Settlement",
+    "category": "income",
+    "description": "Bakery POS terminal customer revenue September batch 1"
+  },
+  {
+    "id": "tx-2006",
+    "client_id": "c-020",
+    "timestamp": "2026-09-08T14:30:00Z",
+    "amount": -840.0,
+    "merchant": "Acerta Ondernemersfonds",
+    "category": "social_contributions",
+    "description": "Q3 freelance social insurance contribution"
+  },
+  {
+    "id": "tx-2007",
+    "client_id": "c-020",
+    "timestamp": "2026-09-14T11:00:00Z",
+    "amount": -280.0,
+    "merchant": "Fiscaal Bureau Roeselare",
+    "category": "accounting_tax",
+    "description": "Monthly accounting and VAT ledger filing"
+  },
+  {
+    "id": "tx-2008",
+    "client_id": "c-020",
+    "timestamp": "2026-09-18T11:00:00Z",
+    "amount": -850.0,
+    "merchant": "KBC Business Buffer",
+    "category": "savings_deposit",
+    "description": "Monthly VAT buffer allocation"
+  },
+  {
+    "id": "tx-2009",
+    "client_id": "c-020",
+    "timestamp": "2026-09-24T16:00:00Z",
+    "amount": -145.0,
+    "merchant": "Colruyt Roeselare",
+    "category": "daily_groceries",
+    "description": "Household weekly groceries"
+  },
+  {
+    "id": "tx-2101",
+    "client_id": "c-021",
+    "timestamp": "2026-08-01T08:00:00Z",
+    "amount": 3900.0,
+    "merchant": "ZNA Ziekenhuisnetwerk Antwerpen",
+    "category": "salary",
+    "description": "Head nurse salary August"
+  },
+  {
+    "id": "tx-2102",
+    "client_id": "c-021",
+    "timestamp": "2026-08-04T12:00:00Z",
+    "amount": -1100.0,
+    "merchant": "Antwerp Home Immo",
+    "category": "rent",
+    "description": "Apartment rental Deurne"
+  },
+  {
+    "id": "tx-2103",
+    "client_id": "c-021",
+    "timestamp": "2026-08-12T16:30:00Z",
+    "amount": -165.0,
+    "merchant": "Decathlon Sporting Goods",
+    "category": "family_expenses",
+    "description": "Kids athletics gear and running shoes"
+  },
+  {
+    "id": "tx-2104",
+    "client_id": "c-021",
+    "timestamp": "2026-08-18T10:00:00Z",
+    "amount": -300.0,
+    "merchant": "KBC Goal-Based Plan",
+    "category": "savings_deposit",
+    "description": "Monthly family security reserve"
+  },
+  {
+    "id": "tx-2105",
+    "client_id": "c-021",
+    "timestamp": "2026-09-01T08:00:00Z",
+    "amount": 3900.0,
+    "merchant": "ZNA Ziekenhuisnetwerk Antwerpen",
+    "category": "salary",
+    "description": "Head nurse salary September"
+  },
+  {
+    "id": "tx-2106",
+    "client_id": "c-021",
+    "timestamp": "2026-09-04T12:00:00Z",
+    "amount": -1100.0,
+    "merchant": "Antwerp Home Immo",
+    "category": "rent",
+    "description": "Apartment rental Deurne"
+  },
+  {
+    "id": "tx-2107",
+    "client_id": "c-021",
+    "timestamp": "2026-09-12T11:00:00Z",
+    "amount": -180.0,
+    "merchant": "Colruyt Deurne",
+    "category": "daily_groceries",
+    "description": "Weekly family grocery shopping"
+  },
+  {
+    "id": "tx-2108",
+    "client_id": "c-021",
+    "timestamp": "2026-09-18T10:00:00Z",
+    "amount": -300.0,
+    "merchant": "KBC Goal-Based Plan",
+    "category": "savings_deposit",
+    "description": "Monthly family security reserve"
+  },
+  {
+    "id": "tx-2109",
+    "client_id": "c-021",
+    "timestamp": "2026-09-25T14:00:00Z",
+    "amount": -220.0,
+    "merchant": "Helan Mutualiteit & Verzekeringen",
+    "category": "insurance",
+    "description": "Family hospitalization insurance top-up"
+  },
+  {
+    "id": "tx-2201",
+    "client_id": "c-022",
+    "timestamp": "2026-08-03T09:00:00Z",
+    "amount": 4700.0,
+    "merchant": "Euroclear International Brussels",
+    "category": "salary",
+    "description": "Consultancy fee August"
+  },
+  {
+    "id": "tx-2202",
+    "client_id": "c-022",
+    "timestamp": "2026-08-05T11:30:00Z",
+    "amount": -1250.0,
+    "merchant": "Ixelles Living Apartments",
+    "category": "rent",
+    "description": "Furnished expat apartment rental Ixelles"
+  },
+  {
+    "id": "tx-2203",
+    "client_id": "c-022",
+    "timestamp": "2026-08-12T19:00:00Z",
+    "amount": -85.0,
+    "merchant": "Delhaize Chaussee d'Ixelles",
+    "category": "daily_groceries",
+    "description": "Weekly grocery shopping"
+  },
+  {
+    "id": "tx-2204",
+    "client_id": "c-022",
+    "timestamp": "2026-08-18T10:00:00Z",
+    "amount": -600.0,
+    "merchant": "KBC High-Yield Savings",
+    "category": "savings_deposit",
+    "description": "Monthly home acquisition buffer"
+  },
+  {
+    "id": "tx-2205",
+    "client_id": "c-022",
+    "timestamp": "2026-09-03T09:00:00Z",
+    "amount": 4700.0,
+    "merchant": "Euroclear International Brussels",
+    "category": "salary",
+    "description": "Consultancy fee September"
+  },
+  {
+    "id": "tx-2206",
+    "client_id": "c-022",
+    "timestamp": "2026-09-05T11:30:00Z",
+    "amount": -1250.0,
+    "merchant": "Ixelles Living Apartments",
+    "category": "rent",
+    "description": "Furnished expat apartment rental Ixelles"
+  },
+  {
+    "id": "tx-2207",
+    "client_id": "c-022",
+    "timestamp": "2026-09-10T14:15:00Z",
+    "amount": -45.0,
+    "merchant": "Immoweb Real Estate Alerts",
+    "category": "real_estate_platform",
+    "description": "Apartment alerts Brussels: Ixelles, Etterbeek, Uccle"
+  },
+  {
+    "id": "tx-2208",
+    "client_id": "c-022",
+    "timestamp": "2026-09-18T10:00:00Z",
+    "amount": -600.0,
+    "merchant": "KBC High-Yield Savings",
+    "category": "savings_deposit",
+    "description": "Monthly home acquisition buffer"
+  },
+  {
+    "id": "tx-2209",
+    "client_id": "c-022",
+    "timestamp": "2026-09-24T18:30:00Z",
+    "amount": -85.0,
+    "merchant": "SNCB/NMBS Train Subscriptions",
+    "category": "mobility",
+    "description": "Monthly commuter pass Brussels-Antwerp"
+  },
+  {
+    "id": "tx-2301",
+    "client_id": "c-023",
+    "timestamp": "2026-08-01T08:00:00Z",
+    "amount": 7200.0,
+    "merchant": "Vlaams Gemeenschap & Apotheek Goossens",
+    "category": "salary",
+    "description": "Combined salaries August"
+  },
+  {
+    "id": "tx-2302",
+    "client_id": "c-023",
+    "timestamp": "2026-08-07T11:00:00Z",
+    "amount": -2200.0,
+    "merchant": "KBC Pension Savings Fund",
+    "category": "pension_savings",
+    "description": "Combined maximum ceiling pension savings deposit"
+  },
+  {
+    "id": "tx-2303",
+    "client_id": "c-023",
+    "timestamp": "2026-08-15T14:00:00Z",
+    "amount": 650.0,
+    "merchant": "KBC Fixed Term Account Interest",
+    "category": "investment",
+    "description": "Semi-annual guaranteed interest coupon payout"
+  },
+  {
+    "id": "tx-2304",
+    "client_id": "c-023",
+    "timestamp": "2026-08-25T16:00:00Z",
+    "amount": -420.0,
+    "merchant": "KBC Home & Civil Liability",
+    "category": "insurance",
+    "description": "Annual comprehensive home and liability package"
+  },
+  {
+    "id": "tx-2305",
+    "client_id": "c-023",
+    "timestamp": "2026-09-01T08:00:00Z",
+    "amount": 7200.0,
+    "merchant": "Vlaams Gemeenschap & Apotheek Goossens",
+    "category": "salary",
+    "description": "Combined salaries September"
+  },
+  {
+    "id": "tx-2306",
+    "client_id": "c-023",
+    "timestamp": "2026-09-07T11:00:00Z",
+    "amount": -2200.0,
+    "merchant": "KBC Pension Savings Fund",
+    "category": "pension_savings",
+    "description": "Combined maximum ceiling pension savings deposit"
+  },
+  {
+    "id": "tx-2307",
+    "client_id": "c-023",
+    "timestamp": "2026-09-16T15:30:00Z",
+    "amount": -550.0,
+    "merchant": "Notariaat Leuven-Heverlee",
+    "category": "notary",
+    "description": "Succession planning consultation and reciprocal will review"
+  },
+  {
+    "id": "tx-2308",
+    "client_id": "c-023",
+    "timestamp": "2026-09-22T10:00:00Z",
+    "amount": -2000.0,
+    "merchant": "KBC Bolero Sustainable Index",
+    "category": "investment",
+    "description": "Allocation to European dividend aristocrats ETF"
+  },
+  {
+    "id": "tx-2309",
+    "client_id": "c-023",
+    "timestamp": "2026-09-28T18:00:00Z",
+    "amount": -195.0,
+    "merchant": "Bio-Planet Leuven",
+    "category": "daily_groceries",
+    "description": "Organic groceries"
+  },
+  {
+    "id": "tx-2401",
+    "client_id": "c-024",
+    "timestamp": "2026-08-04T10:15:00Z",
+    "amount": 3900.0,
+    "merchant": "RTBF Television Productions",
+    "category": "income",
+    "description": "Invoice INV-2026-033 3D Title Sequence Animation"
+  },
+  {
+    "id": "tx-2402",
+    "client_id": "c-024",
+    "timestamp": "2026-08-07T14:00:00Z",
+    "amount": -380.0,
+    "merchant": "Silversquare Coworking Brussels",
+    "category": "rent",
+    "description": "Dedicated desk membership August"
+  },
+  {
+    "id": "tx-2403",
+    "client_id": "c-024",
+    "timestamp": "2026-08-14T11:00:00Z",
+    "amount": -1200.0,
+    "merchant": "KBC Tax & VAT Automated Reserve",
+    "category": "savings_deposit",
+    "description": "Automated 33% tax split from client revenue"
+  },
+  {
+    "id": "tx-2404",
+    "client_id": "c-024",
+    "timestamp": "2026-08-22T16:00:00Z",
+    "amount": -65.0,
+    "merchant": "Adobe Creative Cloud",
+    "category": "software_saas",
+    "description": "After Effects & Premiere Pro software subscription"
+  },
+  {
+    "id": "tx-2405",
+    "client_id": "c-024",
+    "timestamp": "2026-09-03T10:15:00Z",
+    "amount": 4200.0,
+    "merchant": "Netflix Europe Subtitling & Motion",
+    "category": "income",
+    "description": "Invoice INV-2026-039 Motion Graphics Package"
+  },
+  {
+    "id": "tx-2406",
+    "client_id": "c-024",
+    "timestamp": "2026-09-07T14:00:00Z",
+    "amount": -380.0,
+    "merchant": "Silversquare Coworking Brussels",
+    "category": "rent",
+    "description": "Dedicated desk membership September"
+  },
+  {
+    "id": "tx-2407",
+    "client_id": "c-024",
+    "timestamp": "2026-09-12T13:30:00Z",
+    "amount": -820.0,
+    "merchant": "Acerta Social Insurance Fund",
+    "category": "social_contributions",
+    "description": "Q3 freelance social insurance contribution"
+  },
+  {
+    "id": "tx-2408",
+    "client_id": "c-024",
+    "timestamp": "2026-09-15T11:00:00Z",
+    "amount": -1350.0,
+    "merchant": "KBC Tax & VAT Automated Reserve",
+    "category": "savings_deposit",
+    "description": "Automated 33% tax split from client revenue"
+  },
+  {
+    "id": "tx-2409",
+    "client_id": "c-024",
+    "timestamp": "2026-09-22T15:30:00Z",
+    "amount": -290.0,
+    "merchant": "Fiscaal Kantoor Elsene",
+    "category": "accounting_tax",
+    "description": "Quarterly VAT filing and freelance IP copyright optimization"
+  },
+  {
+    "id": "tx-fa5f0732",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:28.252595+00:00",
+    "amount": -750,
+    "merchant": "Notaris Van Damme & Partners Leuven",
+    "category": "notary",
+    "description": "Deposit for sales agreement deed closing"
+  },
+  {
+    "id": "tx-d1ae588c",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:33.612518+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-647ab5f5",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:34.221618+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-ae226837",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:34.535425+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-7a695db4",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:34.847741+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-f30b9b73",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:37.859477+00:00",
+    "amount": -750,
+    "merchant": "Notaris Van Damme & Partners Leuven",
+    "category": "notary",
+    "description": "Deposit for sales agreement deed closing"
+  },
+  {
+    "id": "tx-6d7dc67a",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:39.439868+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-5543aa26",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:39.678538+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-15561d3f",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:42.265858+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-9fffdd97",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:42.653384+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-f393dcc8",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:44.061539+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-f3d5121a",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:44.290415+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-2cba03aa",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:50.670039+00:00",
+    "amount": -750,
+    "merchant": "Notaris Van Damme & Partners Leuven",
+    "category": "notary",
+    "description": "Deposit for sales agreement deed closing"
+  },
+  {
+    "id": "tx-22d37043",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:53.427435+00:00",
+    "amount": -750,
+    "merchant": "Notaris Van Damme & Partners Leuven",
+    "category": "notary",
+    "description": "Deposit for sales agreement deed closing"
+  },
+  {
+    "id": "tx-ebae5b5c",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:55.264801+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-ccec9cb2",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:52:59.366205+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  },
+  {
+    "id": "tx-976e60ab",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T18:53:07.865774+00:00",
+    "amount": -550,
+    "merchant": "KBC High-Yield Savings Account",
+    "category": "savings_deposit",
+    "description": "Automatic monthly savings deposit"
+  }
+]

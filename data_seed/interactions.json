@@ -1,0 +1,749 @@
+[
+  {
+    "id": "int-101",
+    "client_id": "c-001",
+    "timestamp": "2026-09-01T14:20:00Z",
+    "action": "property_search_viewed",
+    "details": {
+      "query": "Apartments for sale Leuven center",
+      "budget_range": "250000 - 325000"
+    }
+  },
+  {
+    "id": "int-201",
+    "client_id": "c-002",
+    "timestamp": "2026-08-18T14:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can I optimize my freelance pension savings via VAPZ to lower my personal income tax bracket?",
+      "topic": "pension_freelance_vapz"
+    }
+  },
+  {
+    "id": "int-202",
+    "client_id": "c-002",
+    "timestamp": "2026-09-05T15:05:00Z",
+    "action": "kbo_search_viewed",
+    "details": {
+      "service": "CBE / Company Registration verification",
+      "target_nace_code": "73.110 - Advertising agencies"
+    }
+  },
+  {
+    "id": "int-203",
+    "client_id": "c-002",
+    "timestamp": "2026-09-14T11:20:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Business Account Plus",
+      "feature": "Automated VAT reserve split"
+    }
+  },
+  {
+    "id": "int-204",
+    "client_id": "c-002",
+    "timestamp": "2026-09-23T16:45:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "plan_type": "VAPZ Freelance Pension",
+      "annual_contribution": 3965.0,
+      "estimated_tax_reduction": 2140.0
+    }
+  },
+  {
+    "id": "int-301",
+    "client_id": "c-003",
+    "timestamp": "2026-08-22T19:00:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "family_civil_liability",
+      "simulation_reference": "SIM-FAM-99",
+      "covered_members": 4
+    }
+  },
+  {
+    "id": "int-302",
+    "client_id": "c-003",
+    "timestamp": "2026-09-10T20:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What is the best way to save automatically every month for my children's higher education?",
+      "topic": "children_education_savings"
+    }
+  },
+  {
+    "id": "int-303",
+    "client_id": "c-003",
+    "timestamp": "2026-09-20T17:30:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "KBC Goal-Based Plan Starter",
+      "monthly_amount": 100,
+      "horizon_years": 15
+    }
+  },
+  {
+    "id": "int-401",
+    "client_id": "c-004",
+    "timestamp": "2026-08-25T08:25:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How much can a dual-earner family borrow for a 3-bedroom house in Flemish Brabant?",
+      "topic": "home_budget_family"
+    }
+  },
+  {
+    "id": "int-402",
+    "client_id": "c-004",
+    "timestamp": "2026-09-10T13:10:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 340000,
+      "own_contribution": 45000,
+      "term_years": 25,
+      "estimated_monthly_payment": 1645.0
+    }
+  },
+  {
+    "id": "int-403",
+    "client_id": "c-004",
+    "timestamp": "2026-09-18T18:40:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "family_protection_bundle",
+      "features": [
+        "fire_building",
+        "theft_contents",
+        "family_legal_aid"
+      ],
+      "simulation_reference": "SIM-FAM-128"
+    }
+  },
+  {
+    "id": "int-404",
+    "client_id": "c-004",
+    "timestamp": "2026-09-25T11:05:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can we lock the interest rate while we submit our bid for the house in Kessel-Lo?",
+      "topic": "interest_rate_lock_guarantee"
+    }
+  },
+  {
+    "id": "int-501",
+    "client_id": "c-005",
+    "timestamp": "2026-08-14T10:05:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Business Account Plus",
+      "feature": "VAT reserve automation & Peppol invoicing"
+    }
+  },
+  {
+    "id": "int-502",
+    "client_id": "c-005",
+    "timestamp": "2026-09-04T18:35:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?",
+      "topic": "freelance_tax_bv_conversion"
+    }
+  },
+  {
+    "id": "int-503",
+    "client_id": "c-005",
+    "timestamp": "2026-09-17T15:20:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "freelance_continuity_guaranteed_income",
+      "monthly_insured_payout": 3500.0,
+      "elimination_period_days": 30
+    }
+  },
+  {
+    "id": "int-504",
+    "client_id": "c-005",
+    "timestamp": "2026-09-25T16:10:00Z",
+    "action": "kbo_search_viewed",
+    "details": {
+      "service": "Acerta Ondernemingsloket - Digital notary deed for BV setup"
+    }
+  },
+  {
+    "id": "int-601",
+    "client_id": "c-006",
+    "timestamp": "2026-08-20T12:15:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "Balanced sustainable wealth accumulation",
+      "simulation_amount": 50000,
+      "monthly_add": 2500
+    }
+  },
+  {
+    "id": "int-602",
+    "client_id": "c-006",
+    "timestamp": "2026-09-08T09:50:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "estate_protection_and_succession",
+      "simulation_reference": "SIM-EST-44"
+    }
+  },
+  {
+    "id": "int-603",
+    "client_id": "c-006",
+    "timestamp": "2026-09-19T14:40:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?",
+      "topic": "private_banking_succession_consult"
+    }
+  },
+  {
+    "id": "int-701",
+    "client_id": "c-007",
+    "timestamp": "2026-08-16T17:30:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 195000,
+      "own_contribution": 15000,
+      "term_years": 25,
+      "estimated_monthly_payment": 945.0
+    }
+  },
+  {
+    "id": "int-702",
+    "client_id": "c-007",
+    "timestamp": "2026-09-08T19:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What is the 3% registration tax rule in Flanders for first-time single buyers under 35?",
+      "topic": "flanders_registration_tax_abatement"
+    }
+  },
+  {
+    "id": "int-703",
+    "client_id": "c-007",
+    "timestamp": "2026-09-22T20:45:00Z",
+    "action": "first_home_guide_downloaded",
+    "details": {
+      "guide_title": "First-Time Home Buyer Complete Playbook: From Down Payment to Key Handover",
+      "pages": 24
+    }
+  },
+  {
+    "id": "int-801",
+    "client_id": "c-008",
+    "timestamp": "2026-08-12T11:00:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "plan_type": "IPT Physician Management Company",
+      "annual_premium": 14500.0,
+      "corporate_tax_deduction_rate": 25.0
+    }
+  },
+  {
+    "id": "int-802",
+    "client_id": "c-008",
+    "timestamp": "2026-09-04T16:20:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "KBC Institutional Global Health & Biotech Strategy",
+      "simulation_amount": 75000
+    }
+  },
+  {
+    "id": "int-803",
+    "client_id": "c-008",
+    "timestamp": "2026-09-18T10:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the rules for combining an IPT agreement with real estate advance financing through my management company?",
+      "topic": "ipt_real_estate_advance"
+    }
+  },
+  {
+    "id": "int-901",
+    "client_id": "c-009",
+    "timestamp": "2026-08-19T20:00:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 420000,
+      "property_price": 380000,
+      "renovation_budget": 80000,
+      "own_contribution": 60000,
+      "term_years": 25,
+      "estimated_monthly_payment": 1980.0
+    }
+  },
+  {
+    "id": "int-902",
+    "client_id": "c-009",
+    "timestamp": "2026-09-09T18:15:00Z",
+    "action": "renovation_loan_simulator",
+    "details": {
+      "target_epc_upgrade": "from E to A",
+      "subsidized_green_rate": 1.95,
+      "grant_eligible": true
+    }
+  },
+  {
+    "id": "int-903",
+    "client_id": "c-009",
+    "timestamp": "2026-09-19T13:45:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can we combine the KBC green renovation loan with the Flemish Mijn VerbouwPremie subsidy?",
+      "topic": "green_renovation_subsidies"
+    }
+  },
+  {
+    "id": "int-904",
+    "client_id": "c-009",
+    "timestamp": "2026-09-25T17:10:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "all_risk_construction_and_renovation",
+      "coverage_duration_months": 18
+    }
+  },
+  {
+    "id": "int-1001",
+    "client_id": "c-010",
+    "timestamp": "2026-08-20T10:45:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the merchant fees for accepting Payconiq and Bancontact QR payments in my physical pop-up shop?",
+      "topic": "payconiq_merchant_solutions"
+    }
+  },
+  {
+    "id": "int-1002",
+    "client_id": "c-010",
+    "timestamp": "2026-09-06T15:30:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Business Account with Multi-User access and POS integration"
+    }
+  },
+  {
+    "id": "int-1003",
+    "client_id": "c-010",
+    "timestamp": "2026-09-17T11:15:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "commercial_inventory_and_cyber_liability",
+      "annual_estimated_revenue": 120000
+    }
+  },
+  {
+    "id": "int-1101",
+    "client_id": "c-011",
+    "timestamp": "2026-08-18T16:00:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "projected_retirement_year": 2028,
+      "capital_lump_sum": 320000,
+      "monthly_annuity_option": 1420.0
+    }
+  },
+  {
+    "id": "int-1102",
+    "client_id": "c-011",
+    "timestamp": "2026-09-08T14:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?",
+      "topic": "tax_free_bankgift_flanders"
+    }
+  },
+  {
+    "id": "int-1103",
+    "client_id": "c-011",
+    "timestamp": "2026-09-22T10:50:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "Capital Preservation & Defensive Dividend Yield",
+      "target_allocation": 100000
+    }
+  },
+  {
+    "id": "int-1201",
+    "client_id": "c-012",
+    "timestamp": "2026-08-10T14:20:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can my BV lease a zero-emission electric vehicle via KBC Autolease with 100% tax deductibility in 2026?",
+      "topic": "ev_leasing_tax_deductibility"
+    }
+  },
+  {
+    "id": "int-1202",
+    "client_id": "c-012",
+    "timestamp": "2026-08-28T16:40:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Automated Treasury Split: VAT + Corporate Tax + Director Remuneration"
+    }
+  },
+  {
+    "id": "int-1203",
+    "client_id": "c-012",
+    "timestamp": "2026-09-14T09:30:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "cyber_liability_and_professional_indemnity",
+      "coverage_limit": 2500000
+    }
+  },
+  {
+    "id": "int-1204",
+    "client_id": "c-012",
+    "timestamp": "2026-09-24T18:00:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How do I activate the automatic Peppol e-invoicing link with Billit and Acerta inside KBC Mobile?",
+      "topic": "peppol_billit_activation"
+    }
+  },
+  {
+    "id": "int-1301",
+    "client_id": "c-013",
+    "timestamp": "2026-08-15T18:00:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 210000,
+      "own_contribution": 20000,
+      "term_years": 25,
+      "estimated_monthly_payment": 1015.0
+    }
+  },
+  {
+    "id": "int-1302",
+    "client_id": "c-013",
+    "timestamp": "2026-09-10T19:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the registration tax rules for buying a studio or 1-bedroom flat in Leuven?",
+      "topic": "flanders_registration_tax_starter"
+    }
+  },
+  {
+    "id": "int-1303",
+    "client_id": "c-013",
+    "timestamp": "2026-09-20T21:00:00Z",
+    "action": "first_home_guide_downloaded",
+    "details": {
+      "guide_title": "First-Time Home Buyer Complete Playbook",
+      "pages": 24
+    }
+  },
+  {
+    "id": "int-1401",
+    "client_id": "c-014",
+    "timestamp": "2026-08-18T12:00:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Business Account Plus",
+      "feature": "Automated VAT reserve split"
+    }
+  },
+  {
+    "id": "int-1402",
+    "client_id": "c-014",
+    "timestamp": "2026-09-08T17:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can I finance my commercial service van via KBC Autolease with full corporate tax deduction?",
+      "topic": "commercial_van_lease_tax"
+    }
+  },
+  {
+    "id": "int-1403",
+    "client_id": "c-014",
+    "timestamp": "2026-09-20T16:30:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "freelance_continuity_guaranteed_income",
+      "monthly_insured_payout": 3000.0
+    }
+  },
+  {
+    "id": "int-1501",
+    "client_id": "c-015",
+    "timestamp": "2026-08-20T20:15:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 480000,
+      "own_contribution": 70000,
+      "term_years": 25,
+      "estimated_monthly_payment": 2280.0
+    }
+  },
+  {
+    "id": "int-1502",
+    "client_id": "c-015",
+    "timestamp": "2026-09-09T18:40:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "family_protection_bundle",
+      "features": [
+        "fire_building",
+        "outstanding_balance_both_partners"
+      ]
+    }
+  },
+  {
+    "id": "int-1503",
+    "client_id": "c-015",
+    "timestamp": "2026-09-22T19:10:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How does the KBC interest rate discount work when we bundle fire and outstanding balance insurance?",
+      "topic": "mortgage_bundle_discount"
+    }
+  },
+  {
+    "id": "int-1601",
+    "client_id": "c-016",
+    "timestamp": "2026-08-22T11:00:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "Capital Preservation & Defensive Dividend Yield",
+      "target_allocation": 120000
+    }
+  },
+  {
+    "id": "int-1602",
+    "client_id": "c-016",
+    "timestamp": "2026-09-12T14:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the legal steps to set up a bank gift (bankgift) for my grandchildren without incurring Flemish gift taxes?",
+      "topic": "tax_free_bankgift_flanders"
+    }
+  },
+  {
+    "id": "int-1603",
+    "client_id": "c-016",
+    "timestamp": "2026-09-24T10:00:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "estate_protection_and_succession",
+      "simulation_reference": "SIM-EST-92"
+    }
+  },
+  {
+    "id": "int-1701",
+    "client_id": "c-017",
+    "timestamp": "2026-08-16T19:00:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 175000,
+      "own_contribution": 10000,
+      "term_years": 25,
+      "estimated_monthly_payment": 845.0
+    }
+  },
+  {
+    "id": "int-1702",
+    "client_id": "c-017",
+    "timestamp": "2026-09-14T20:20:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How much down payment do I need to buy my first apartment in Ghent as a single starter?",
+      "topic": "starter_down_payment_requirements"
+    }
+  },
+  {
+    "id": "int-1801",
+    "client_id": "c-018",
+    "timestamp": "2026-08-15T15:00:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "plan_type": "IPT Legal Partner Management Company",
+      "annual_premium": 18000.0,
+      "corporate_tax_deduction_rate": 25.0
+    }
+  },
+  {
+    "id": "int-1802",
+    "client_id": "c-018",
+    "timestamp": "2026-09-08T16:30:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "KBC Institutional Global Sustainable Leaders Mandate",
+      "simulation_amount": 150000
+    }
+  },
+  {
+    "id": "int-1803",
+    "client_id": "c-018",
+    "timestamp": "2026-09-22T11:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can I schedule a personal consultation with a KBC Private Banker regarding inheritance tax mitigation?",
+      "topic": "private_banking_succession_consult"
+    }
+  },
+  {
+    "id": "int-1901",
+    "client_id": "c-019",
+    "timestamp": "2026-08-15T20:00:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 360000,
+      "own_contribution": 40000,
+      "term_years": 25,
+      "estimated_monthly_payment": 1740.0
+    }
+  },
+  {
+    "id": "int-1902",
+    "client_id": "c-019",
+    "timestamp": "2026-09-12T19:30:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "mandatory_home_bundle",
+      "coverage": [
+        "fire_hazard",
+        "outstanding_balance_life"
+      ],
+      "notary_certificate_ready": true
+    }
+  },
+  {
+    "id": "int-1903",
+    "client_id": "c-019",
+    "timestamp": "2026-09-22T21:00:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can Kate generate the official mortgage certificate and send it directly to Notaris Antwerpen-Centrum?",
+      "topic": "notary_certificate_dispatch"
+    }
+  },
+  {
+    "id": "int-2001",
+    "client_id": "c-020",
+    "timestamp": "2026-08-18T13:00:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What are the merchant fees for accepting Payconiq and Bancontact QR payments in my bakery?",
+      "topic": "payconiq_merchant_solutions"
+    }
+  },
+  {
+    "id": "int-2002",
+    "client_id": "c-020",
+    "timestamp": "2026-09-10T15:45:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "plan_type": "VAPZ Freelance Pension",
+      "annual_contribution": 3800.0,
+      "estimated_tax_reduction": 2010.0
+    }
+  },
+  {
+    "id": "int-2101",
+    "client_id": "c-021",
+    "timestamp": "2026-08-20T19:00:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "family_civil_liability",
+      "covered_members": 3
+    }
+  },
+  {
+    "id": "int-2102",
+    "client_id": "c-021",
+    "timestamp": "2026-09-15T20:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "What is the best way to save automatically every month for my children's higher education?",
+      "topic": "children_education_savings"
+    }
+  },
+  {
+    "id": "int-2201",
+    "client_id": "c-022",
+    "timestamp": "2026-08-20T17:00:00Z",
+    "action": "mortgage_simulator_used",
+    "details": {
+      "simulated_amount": 260000,
+      "own_contribution": 30000,
+      "term_years": 25,
+      "estimated_monthly_payment": 1260.0
+    }
+  },
+  {
+    "id": "int-2202",
+    "client_id": "c-022",
+    "timestamp": "2026-09-12T18:30:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "Can European expats in Belgium get a KBC home loan with fixed interest rates?",
+      "topic": "expat_mortgage_eligibility"
+    }
+  },
+  {
+    "id": "int-2301",
+    "client_id": "c-023",
+    "timestamp": "2026-08-18T15:00:00Z",
+    "action": "pension_simulator_used",
+    "details": {
+      "projected_retirement_year": 2029,
+      "capital_lump_sum": 360000,
+      "monthly_annuity_option": 1580.0
+    }
+  },
+  {
+    "id": "int-2302",
+    "client_id": "c-023",
+    "timestamp": "2026-09-10T14:00:00Z",
+    "action": "investment_fund_viewed",
+    "details": {
+      "fund_category": "Balanced sustainable wealth accumulation",
+      "simulation_amount": 80000
+    }
+  },
+  {
+    "id": "int-2303",
+    "client_id": "c-023",
+    "timestamp": "2026-09-20T16:15:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can we structure an inheritance gift to our adult children while retaining usufruct?",
+      "topic": "gift_usufruct_planning"
+    }
+  },
+  {
+    "id": "int-2401",
+    "client_id": "c-024",
+    "timestamp": "2026-08-14T11:00:00Z",
+    "action": "business_account_viewed",
+    "details": {
+      "product": "KBC Automated Treasury Split: VAT + Taxes + Spendable"
+    }
+  },
+  {
+    "id": "int-2402",
+    "client_id": "c-024",
+    "timestamp": "2026-09-08T15:30:00Z",
+    "action": "insurance_quote_viewed",
+    "details": {
+      "insurance_type": "cyber_liability_and_professional_indemnity",
+      "coverage_limit": 1500000
+    }
+  },
+  {
+    "id": "int-2403",
+    "client_id": "c-024",
+    "timestamp": "2026-09-22T17:45:00Z",
+    "action": "kate_query",
+    "details": {
+      "query": "How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?",
+      "topic": "freelance_tax_bv_conversion"
+    }
+  }
+]
