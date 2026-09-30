@@ -687,6 +687,28 @@ class ContentSizeLimitMiddleware(BaseHTTPMiddleware):
                 )
         return await call_next(request)
 
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    """
+    Emits OWASP-recommended security headers on all responses:
+    - X-Content-Type-Options: nosniff
+    - X-Frame-Options: DENY
+    - Strict-Transport-Security: max-age=31536000; includeSubDomains
+    - Referrer-Policy: strict-origin-when-cross-origin
+    - X-XSS-Protection: 1; mode=block
+    - Permissions-Policy: camera=(), microphone=(), geolocation=()
+    - Content-Security-Policy
+    """
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+        response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' http://localhost:* ws://localhost:*;"
+        return response
+
 # ---------------------------------------------------------------------------
 # FastAPI Application Setup
 # ---------------------------------------------------------------------------
@@ -696,16 +718,19 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# 1. Host Header Input Validation (Protects against host header injection / cache poisoning)
+# 1. Security Headers (OWASP protection against clickjacking, MIME sniffing, XSS)
+app.add_middleware(SecurityHeadersMiddleware)
+
+# 2. Host Header Input Validation (Protects against host header injection / cache poisoning)
 app.add_middleware(
     TrustedHostMiddleware,
     allowed_hosts=["localhost", "127.0.0.1", "testserver", "*"]
 )
 
-# 2. Request Body Size Limit Validation (Protects against DoS / resource exhaustion)
+# 3. Request Body Size Limit Validation (Protects against DoS / resource exhaustion)
 app.add_middleware(ContentSizeLimitMiddleware, max_upload_size=1_048_576)
 
-# 3. Secure CORS Middleware (Local dev regex with credentials, no wildcard with credentials)
+# 4. Secure CORS Middleware (Local dev regex with credentials, no wildcard with credentials)
 app.add_middleware(
     CORSMiddleware,
     allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$",

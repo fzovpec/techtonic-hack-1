@@ -629,8 +629,31 @@ export function evaluateClientSignals(clientId) {
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+// Security Hardening: Disable Express signature header
+app.disable('x-powered-by');
+
+// Security Headers via Helmet (OWASP recommended security headers)
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        imgSrc: ["'self'", 'data:', 'https:'],
+        connectSrc: ["'self'", 'http://localhost:*', 'ws://localhost:*'],
+      },
+    },
+    crossOriginEmbedderPolicy: false,
+    frameguard: { action: 'deny' },
+    noSniff: true,
+    hsts: { maxAge: 31536000, includeSubDomains: true },
+    referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+  })
+);
+
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '1mb' }));
 
 // Request logger for hackathon demo debugging
 app.use((req, res, next) => {

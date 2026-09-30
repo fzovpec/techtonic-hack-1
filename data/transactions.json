@@ -2032,32 +2032,5 @@
     "merchant": "Fiscaal Kantoor Elsene",
     "category": "accounting_tax",
     "description": "Quarterly VAT filing and freelance IP copyright optimization"
-  },
-  {
-    "id": "tx-a5f88b9f",
-    "client_id": "c-011",
-    "timestamp": "2026-09-30T19:24:48.715120+00:00",
-    "amount": -750.0,
-    "merchant": "Notaris Van Damme & Partners Leuven",
-    "category": "notary",
-    "description": "Deposit for sales agreement deed closing"
-  },
-  {
-    "id": "tx-cfdae789",
-    "client_id": "c-011",
-    "timestamp": "2026-09-30T19:24:53.831470+00:00",
-    "amount": -49.0,
-    "merchant": "Immoweb S.A. Brussels",
-    "category": "real_estate_platform",
-    "description": "Property search alerts & valuation report"
-  },
-  {
-    "id": "tx-99aff2fc",
-    "client_id": "c-011",
-    "timestamp": "2026-09-30T19:24:54.145588+00:00",
-    "amount": -49.0,
-    "merchant": "Immoweb S.A. Brussels",
-    "category": "real_estate_platform",
-    "description": "Property search alerts & valuation report"
   }
 ]
