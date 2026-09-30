@@ -46,8 +46,8 @@
     "action": "pension_simulator_used",
     "details": {
       "plan_type": "VAPZ Freelance Pension",
-      "annual_contribution": 3965.0,
-      "estimated_tax_reduction": 2140.0
+      "annual_contribution": 3965,
+      "estimated_tax_reduction": 2140
     }
   },
   {
@@ -101,7 +101,7 @@
       "simulated_amount": 340000,
       "own_contribution": 45000,
       "term_years": 25,
-      "estimated_monthly_payment": 1645.0
+      "estimated_monthly_payment": 1645
     }
   },
   {
@@ -156,7 +156,7 @@
     "action": "insurance_quote_viewed",
     "details": {
       "insurance_type": "freelance_continuity_guaranteed_income",
-      "monthly_insured_payout": 3500.0,
+      "monthly_insured_payout": 3500,
       "elimination_period_days": 30
     }
   },
@@ -209,7 +209,7 @@
       "simulated_amount": 195000,
       "own_contribution": 15000,
       "term_years": 25,
-      "estimated_monthly_payment": 945.0
+      "estimated_monthly_payment": 945
     }
   },
   {
@@ -239,8 +239,8 @@
     "action": "pension_simulator_used",
     "details": {
       "plan_type": "IPT Physician Management Company",
-      "annual_premium": 14500.0,
-      "corporate_tax_deduction_rate": 25.0
+      "annual_premium": 14500,
+      "corporate_tax_deduction_rate": 25
     }
   },
   {
@@ -274,7 +274,7 @@
       "renovation_budget": 80000,
       "own_contribution": 60000,
       "term_years": 25,
-      "estimated_monthly_payment": 1980.0
+      "estimated_monthly_payment": 1980
     }
   },
   {
@@ -345,7 +345,7 @@
     "details": {
       "projected_retirement_year": 2028,
       "capital_lump_sum": 320000,
-      "monthly_annuity_option": 1420.0
+      "monthly_annuity_option": 1420
     }
   },
   {
@@ -416,7 +416,7 @@
       "simulated_amount": 210000,
       "own_contribution": 20000,
       "term_years": 25,
-      "estimated_monthly_payment": 1015.0
+      "estimated_monthly_payment": 1015
     }
   },
   {
@@ -466,7 +466,7 @@
     "action": "insurance_quote_viewed",
     "details": {
       "insurance_type": "freelance_continuity_guaranteed_income",
-      "monthly_insured_payout": 3000.0
+      "monthly_insured_payout": 3000
     }
   },
   {
@@ -478,7 +478,7 @@
       "simulated_amount": 480000,
       "own_contribution": 70000,
       "term_years": 25,
-      "estimated_monthly_payment": 2280.0
+      "estimated_monthly_payment": 2280
     }
   },
   {
@@ -543,7 +543,7 @@
       "simulated_amount": 175000,
       "own_contribution": 10000,
       "term_years": 25,
-      "estimated_monthly_payment": 845.0
+      "estimated_monthly_payment": 845
     }
   },
   {
@@ -563,8 +563,8 @@
     "action": "pension_simulator_used",
     "details": {
       "plan_type": "IPT Legal Partner Management Company",
-      "annual_premium": 18000.0,
-      "corporate_tax_deduction_rate": 25.0
+      "annual_premium": 18000,
+      "corporate_tax_deduction_rate": 25
     }
   },
   {
@@ -596,7 +596,7 @@
       "simulated_amount": 360000,
       "own_contribution": 40000,
       "term_years": 25,
-      "estimated_monthly_payment": 1740.0
+      "estimated_monthly_payment": 1740
     }
   },
   {
@@ -640,8 +640,8 @@
     "action": "pension_simulator_used",
     "details": {
       "plan_type": "VAPZ Freelance Pension",
-      "annual_contribution": 3800.0,
-      "estimated_tax_reduction": 2010.0
+      "annual_contribution": 3800,
+      "estimated_tax_reduction": 2010
     }
   },
   {
@@ -673,7 +673,7 @@
       "simulated_amount": 260000,
       "own_contribution": 30000,
       "term_years": 25,
-      "estimated_monthly_payment": 1260.0
+      "estimated_monthly_payment": 1260
     }
   },
   {
@@ -694,7 +694,7 @@
     "details": {
       "projected_retirement_year": 2029,
       "capital_lump_sum": 360000,
-      "monthly_annuity_option": 1580.0
+      "monthly_annuity_option": 1580
     }
   },
   {
@@ -745,5 +745,11 @@
       "query": "How can I optimize freelance tax reserves, corporate conversion to BV, and tax-sheltered pension contributions?",
       "topic": "freelance_tax_bv_conversion"
     }
+  },
+  {
+    "id": "int-aebe281f",
+    "client_id": "c-001",
+    "timestamp": "2026-09-30T20:08:33.595Z",
+    "action": "test_raw_body_4"
   }
 ]

@@ -4,7 +4,7 @@
     "detected_intent": "buying_first_home",
     "confidence_score": 0.86,
     "intent_stage": "active_decision",
-    "last_updated": "2026-09-30T20:00:46.629Z",
+    "last_updated": "2026-09-30T20:08:33.621Z",
     "kate_message": "Hi Thomas, your home search is gathering momentum. Based on your recent simulations, you have strong borrowing capacity. Compare notary closing fees and explore pre-approved listings today.",
     "transparency_reason": "Why am I seeing this? KBC Signal Engine recognized 6 evidence indicators across banking history, interactions, and financial profile: Starter profile stage (young_professional_starter) correlates with first property acquisition; Independent professional career track (Junior IT Consultant); Healthy savings buffer of €34,500; Active premium property search alert subscriptions (Immoweb Real Estate Premium).",
     "detected_signals": [
