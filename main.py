@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Annotated, Any, Dict, List, Literal, Optional, Union
 
-from fastapi import FastAPI, HTTPException, Path as FastApiPath
+from fastapi import FastAPI, HTTPException, Path as FastApiPath, Body
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.middleware.trustedhost import TrustedHostMiddleware
@@ -117,10 +117,33 @@ class ExperienceDetails(BaseModel):
     why_am_i_seeing_this: str
     recommended_actions: List[RecommendedAction]
 
+class ClientProfile(BaseModel):
+    id: str = Field(..., max_length=32, description="Client ID")
+    name: str = Field(..., max_length=120, description="Full client name")
+    savings_balance: float = Field(..., description="Current savings balance")
+    monthly_income: float = Field(..., description="Monthly net income")
+    checking_balance: Optional[float] = Field(None, description="Current checking balance")
+    age: Optional[int] = Field(None, ge=0, le=150)
+    profession: Optional[str] = Field(None, max_length=120)
+    profile: Optional[str] = Field(None, max_length=120)
+
+    model_config = {"extra": "ignore"}
+
 class ClientPredictionResponse(BaseModel):
-    client: Dict[str, Any]
+    client: ClientProfile
     prediction: PredictionDetails
     experience: ExperienceDetails
+
+class InteractionDetails(BaseModel):
+    simulated_amount: Optional[float] = Field(None, ge=0.0, le=100_000_000.0)
+    term_years: Optional[int] = Field(None, ge=1, le=50)
+    interest_rate_type: Optional[str] = Field(None, max_length=50)
+    product: Optional[str] = Field(None, max_length=100)
+    feature: Optional[str] = Field(None, max_length=100)
+    note: Optional[str] = Field(None, max_length=500)
+    amount: Optional[float] = Field(None, ge=0.0, le=100_000_000.0)
+
+    model_config = {"extra": "ignore"}
 
 class TransactionPayload(BaseModel):
     amount: float = Field(..., ge=-10_000_000.0, le=10_000_000.0, description="Transaction amount in EUR")
@@ -133,9 +156,12 @@ class TransactionPayload(BaseModel):
     model_config = {"extra": "ignore"}
 
 class InteractionPayload(BaseModel):
-    action: str = Field(..., min_length=1, max_length=120, description="Interaction action code")
-    details: Optional[Union[str, Dict[str, Any]]] = Field(None, description="Interaction metadata or parameters")
-    id: Optional[str] = Field(None, max_length=64, description="Optional client interaction ID")
+    action: str = Field(..., min_length=1, max_length=120, pattern=r"^[a-zA-Z0-9_\-\.\s]+$", description="Interaction action code")
+    details: Optional[Union[str, InteractionDetails, Dict[str, Union[str, int, float, bool]]]] = Field(
+        None,
+        description="Validated interaction metadata"
+    )
+    id: Optional[str] = Field(None, max_length=64, pattern=r"^[a-zA-Z0-9_\-]+$", description="Optional client interaction ID")
     timestamp: Optional[str] = Field(None, max_length=64, description="Optional ISO timestamp")
 
     model_config = {"extra": "ignore"}
@@ -752,22 +778,22 @@ app = FastAPI(
 # 1. Security Headers (OWASP protection against clickjacking, MIME sniffing, XSS)
 app.add_middleware(SecurityHeadersMiddleware)
 
-# 2. Host Header Input Validation (Protects against host header injection / cache poisoning)
+# 2. Host Header Input Validation (Strict allowed hosts, NO wildcard)
 app.add_middleware(
     TrustedHostMiddleware,
-    allowed_hosts=["localhost", "127.0.0.1", "testserver", "*"]
+    allowed_hosts=["localhost", "127.0.0.1", "testserver"]
 )
 
 # 3. Request Body Size Limit Validation (Protects against DoS / resource exhaustion)
 app.add_middleware(ContentSizeLimitMiddleware, max_upload_size=1_048_576)
 
-# 4. Secure CORS Middleware (Local dev regex with credentials, no wildcard with credentials)
+# 4. Secure CORS Middleware (Local dev regex with credentials, strict header validation)
 app.add_middleware(
     CORSMiddleware,
     allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$",
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["*"],
+    allow_headers=["Content-Type", "Authorization", "Accept", "X-Requested-With"],
 )
 
 # ---------------------------------------------------------------------------
@@ -818,7 +844,7 @@ def get_client_prediction(
 
 @app.post("/api/clients/{client_id}/events", response_model=ClientPredictionResponse)
 def post_client_event(
-    event_req: ClientEventRequest,
+    event_req: ClientEventRequest = Body(..., description="Validated event payload"),
     client_id: str = FastApiPath(
         ...,
         min_length=2,
@@ -876,12 +902,19 @@ def post_client_event(
         event_id = int_payload.id or f"int-{uuid.uuid4().hex[:8]}"
         timestamp = int_payload.timestamp or current_iso_time()
 
+        # Handle details serialization safely
+        details_val = int_payload.details
+        if hasattr(details_val, "model_dump"):
+            details_val = details_val.model_dump(exclude_none=True)
+        elif details_val is None:
+            details_val = {}
+
         event_record = {
             "id": event_id,
             "client_id": normalized_id,
             "timestamp": timestamp,
             "action": int_payload.action.strip().lower(),
-            "details": int_payload.details if int_payload.details is not None else {}
+            "details": details_val
         }
 
         interactions = load_json(INTERACTIONS_FILE, [])
@@ -899,7 +932,10 @@ def reset_simulator():
         raise HTTPException(status_code=500, detail="No seed files found in /data_seed")
 
     for sf in seed_files:
-        shutil.copy2(sf, DATA_DIR / sf.name)
+        dest_path = (DATA_DIR / sf.name).resolve()
+        if not dest_path.is_relative_to(DATA_DIR.resolve()):
+            raise HTTPException(status_code=400, detail="Invalid destination path")
+        shutil.copy2(sf, dest_path)
 
     return {
         "status": "success",
