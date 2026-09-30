@@ -298,7 +298,10 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if is_closing:
             has_closing_tx = True
             closing_txs.append(tx)
-            scores["first_time_home_buyer"] += 45.0 * w
+            scores["first_time_home_buyer"] += 50.0 * w
+            # Buying a home locks capital: strongly damps passive wealth accumulation and freelance risk
+            scores["wealth_accumulator"] -= 30.0 * w
+            scores["freelance_entrepreneur"] -= 20.0 * w
             signals_map["first_time_home_buyer"].append(f"Notary sales deed closing fee: €{abs(amt):,.0f} to {tx.get('merchant', 'Notary Office')}")
             continue
 
@@ -306,6 +309,7 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if cat == "notary" or any(kw in text for kw in ["notary", "notaris", "compromis", "escrow"]):
             notary_txs.append(tx)
             scores["first_time_home_buyer"] += 30.0 * w
+            scores["wealth_accumulator"] -= 15.0 * w
             signals_map["first_time_home_buyer"].append(f"Notary consultation / compromis deposit: €{abs(amt):,.0f} to {tx.get('merchant', 'Notary Office')}")
             continue
 
@@ -313,6 +317,7 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if cat == "surveyor" or any(kw in text for kw in ["surveyor", "landmeter", "epc", "aceg", "expertise", "energie audit", "keuring"]):
             surveyor_txs.append(tx)
             scores["first_time_home_buyer"] += 30.0 * w
+            scores["wealth_accumulator"] -= 12.0 * w
             signals_map["first_time_home_buyer"].append(f"Mandatory EPC energy / surveyor audit: €{abs(amt):,.0f} to {tx.get('merchant', 'Surveyor')}")
             continue
 
@@ -333,6 +338,8 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if cat == "social_contributions" or any(kw in text for kw in ["acerta", "liantis", "xerius", "partena", "cbe", "kbo", "onderneming", "enterprise", "sociaal"]):
             social_txs.append(tx)
             scores["freelance_entrepreneur"] += 55.0 * w
+            scores["wealth_accumulator"] -= 20.0 * w
+            scores["first_time_home_buyer"] -= 10.0 * w
             signals_map["freelance_entrepreneur"].append(f"Statutory social security/enterprise payment: €{abs(amt):,.0f} to {tx.get('merchant', 'Enterprise Fund')}")
             continue
 
@@ -340,13 +347,14 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if (any(kw in text for kw in ["invoice", "factuur", "consulting", "consultancy", "payout", "stripe", "mollie", "client payment"]) or (amt > 1000 and "invoice" in text)) and amt > 0:
             invoice_txs.append(tx)
             scores["freelance_entrepreneur"] += 50.0 * w
+            scores["wealth_accumulator"] -= 15.0 * w
             signals_map["freelance_entrepreneur"].append(f"Commercial client invoicing inflow: €{abs(amt):,.0f} from {tx.get('merchant', 'Client')}")
             continue
 
         # Savings deposits
         if cat == "savings_deposit" and abs(amt) >= 250:
             savings_txs.append(tx)
-            scores["wealth_accumulator"] += 25.0 * w
+            scores["wealth_accumulator"] += 20.0 * w
             scores["first_time_home_buyer"] += 10.0 * w
             signals_map["wealth_accumulator"].append(f"Recurring capital reserve deposit: €{abs(amt):,.0f}")
             continue
@@ -355,6 +363,8 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         if cat in ["investment", "pension_savings", "brokerage", "etf", "funds"] or any(kw in text for kw in ["bolero", "etf", "fund", "degiro", "keytrade", "belegging", "pensioensparen"]):
             invest_txs.append(tx)
             scores["wealth_accumulator"] += 55.0 * w
+            scores["first_time_home_buyer"] -= 20.0 * w
+            scores["freelance_entrepreneur"] -= 10.0 * w
             signals_map["wealth_accumulator"].append(f"Investment & ETF portfolio allocation: €{abs(amt):,.0f} to {tx.get('merchant', 'Broker/Fund')}")
             continue
 
@@ -365,30 +375,34 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
             signals_map["family_expansion"].append(f"Nursery & childcare expense: €{abs(amt):,.0f} at {tx.get('merchant', 'Retailer')}")
             continue
 
-    # Evaluate Interactions with Diminishing Returns
+    # Evaluate Interactions with Diminishing Returns & Cross-Intent Damping
     mortgage_sims = [i for i in interactions if i.get("action") in ["mortgage_simulator_used", "mortgage_calculator", "loan_simulator"]]
     if mortgage_sims:
         sim_pts = get_diminishing_interaction_score(35.0, len(mortgage_sims))
         scores["first_time_home_buyer"] += sim_pts
+        # Simulating mortgage signals capital diversion toward real estate: brings down wealth accumulator
+        scores["wealth_accumulator"] -= sim_pts * 0.45
         signals_map["first_time_home_buyer"].append(f"{len(mortgage_sims)}x visit(s) to mortgage loan simulator (+{sim_pts:.0f}pt)")
 
     kbo_interactions = [i for i in interactions if i.get("action") in ["kbo_search_viewed", "business_account_viewed", "freelance_guide_opened", "cbe_search_viewed"] or any(kw in str(i.get("details", "")).lower() for kw in ["cbe", "business", "freelance", "company"])]
     if kbo_interactions:
         kbo_pts = get_diminishing_interaction_score(35.0, len(kbo_interactions))
         scores["freelance_entrepreneur"] += kbo_pts
+        scores["wealth_accumulator"] -= kbo_pts * 0.40
         signals_map["freelance_entrepreneur"].append(f"CBE/Company registration lookup or business account viewed (+{kbo_pts:.0f}pt)")
 
     invest_interactions = [i for i in interactions if i.get("action") in ["investment_fund_viewed", "pension_simulator_used", "wealth_management_viewed"]]
     if invest_interactions:
         inv_pts = get_diminishing_interaction_score(35.0, len(invest_interactions))
         scores["wealth_accumulator"] += inv_pts
+        scores["first_time_home_buyer"] -= inv_pts * 0.35
         signals_map["wealth_accumulator"].append(f"Investment fund or pension savings simulator consulted (+{inv_pts:.0f}pt)")
 
     if client.get("savings_balance", 0) >= 40000.0:
         scores["wealth_accumulator"] += 20.0
         signals_map["wealth_accumulator"].append(f"Substantial savings reserve of €{client['savings_balance']:,.0f}")
 
-    # Cap all intent scores at 100.0 to prevent historical lock-in / runaway scores
+    # Cap all intent scores between 0.0 and 100.0 to prevent negative or runaway scores
     for k in scores:
         scores[k] = min(100.0, max(0.0, scores[k]))
 
@@ -408,52 +422,68 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
     top_intent, top_score = sorted_scores[0]
     second_intent, second_score = sorted_scores[1]
+    third_intent, third_score = sorted_scores[2] if len(sorted_scores) > 2 else ("", 0.0)
 
     if top_intent != incumbent_intent and top_score < (scores.get(incumbent_intent, 0.0) + HYSTERESIS_MARGIN):
         detected_intent = incumbent_intent
         top_score = scores.get(incumbent_intent, 0.0)
+        remaining = [s for k, s in scores.items() if k != detected_intent]
+        remaining.sort(reverse=True)
+        second_score = remaining[0] if remaining else 0.0
+        third_score = remaining[1] if len(remaining) > 1 else 0.0
     else:
         detected_intent = top_intent
 
-    # Intent Distribution (for multi-hypothesis transparency visualization)
+    # Intent Distribution (0.0 to 1.00 max, without artificial 0.98 cap)
     intent_distribution = {
-        "first_time_home_buyer": round(min(0.98, max(0.05, scores["first_time_home_buyer"] / 100.0)), 2),
-        "freelance_entrepreneur": round(min(0.98, max(0.05, scores["freelance_entrepreneur"] / 100.0)), 2),
-        "wealth_accumulator": round(min(0.98, max(0.05, scores["wealth_accumulator"] / 100.0)), 2)
+        "first_time_home_buyer": round(min(1.00, max(0.0, scores["first_time_home_buyer"] / 100.0)), 2),
+        "freelance_entrepreneur": round(min(1.00, max(0.0, scores["freelance_entrepreneur"] / 100.0)), 2),
+        "wealth_accumulator": round(min(1.00, max(0.0, scores["wealth_accumulator"] / 100.0)), 2)
     }
 
-    # Dynamic Confidence Calculation (Decreases on competition, cancellations, or staleness)
+    # Dynamic Confidence Calculation (Decreases on ambiguity/ties, cancellations, or staleness)
+    is_closing_active = has_closing_tx and not has_closing_cancellation and not has_rental_counter
+
     if top_score <= 5.0:
-        confidence = 0.45
-        margin_penalty = 0.0
+        confidence = 0.30
     else:
-        base_conf = 0.45 + (top_score / (top_score + 35.0)) * 0.50
-        base_conf = min(0.96, max(0.40, base_conf))
+        # Evidence magnitude (0.0 to 1.0)
+        magnitude = min(1.0, top_score / 100.0)
 
-        # 1. Margin penalty: when runner-up is close, confidence decreases due to ambiguity!
-        margin_ratio = (top_score - second_score) / max(1.0, top_score)
-        margin_penalty = 0.0
-        if margin_ratio < 0.20:
-            margin_penalty = (0.20 - margin_ratio) * 1.25  # up to -0.25
-        elif margin_ratio < 0.40:
-            margin_penalty = (0.40 - margin_ratio) * 0.5   # up to -0.10
+        # Dominance: clear separation from 2nd competitor (0.0 when equal)
+        dominance = max(0.0, (top_score - second_score) / max(12.0, top_score))
 
-        # 2. Cancellation / Counter penalty
+        # Tri-spread: separation from average of other 2 competitors
+        tri_spread = max(0.0, (top_score - (second_score + third_score) / 2.0) / max(15.0, top_score))
+
+        # Base confidence:
+        # - High dominance (clear winner): confidence scales up into 80-92%
+        # - Low dominance (near tie / all 3 equal): confidence drops low (~25-35%)
+        base_conf = 0.22 + (magnitude * 0.32) + (dominance * 0.24) + (tri_spread * 0.12)
+
+        # Ambiguity / Tie Penalty: when dominance is low (< 0.15), penalize confidence sharply
+        if dominance < 0.15:
+            base_conf -= (0.15 - dominance) * 0.60
+
+        # Full 1.00 (100%) Action-Ready Boost for closing deed
+        if is_closing_active and client.get("savings_balance", 0) >= 20000.0:
+            base_conf = 1.00 if top_score >= 80.0 else max(base_conf, 0.95)
+
+        # Cancellation / Counter penalties
         cancellation_penalty = 0.0
         if detected_intent == "first_time_home_buyer":
             if has_closing_cancellation:
-                cancellation_penalty += 0.42
+                cancellation_penalty += 0.45
             elif has_rental_counter:
-                cancellation_penalty += 0.28
+                cancellation_penalty += 0.30
             if client.get("savings_balance", 0) < 20000.0:
                 cancellation_penalty += 0.15
 
-        # 3. Staleness / Intent Drift penalty
+        # Staleness / Intent Drift penalty
         staleness_penalty = 0.0
         if N >= 2:
             recent_2 = sorted_txs[-2:]
             recent_votes = [classify_tx_intent(t) for t in recent_2]
-            # Savings deposits support home down payments; don't penalize as drift
             if detected_intent == "first_time_home_buyer":
                 recent_votes = [v for v in recent_votes if v != "wealth_accumulator"]
             if detected_intent not in recent_votes and any(v in scores for v in recent_votes):
@@ -461,7 +491,8 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
                 competing_title = second_intent.replace('_', ' ')
                 signals_map[detected_intent].append(f"Recent signals show concurrent interest in {competing_title}")
 
-        confidence = round(max(0.35, min(0.98, base_conf - margin_penalty - cancellation_penalty - staleness_penalty)), 2)
+        # Clamped strictly between 0.20 and 1.00 (Reaches 1.00 / 100%, NOT capped at 98%)
+        confidence = round(max(0.20, min(1.00, base_conf - cancellation_penalty - staleness_penalty)), 2)
 
     # Stage Determination (Live Reactive, NOT permanently locked in action_ready)
     is_closing_active = has_closing_tx and not has_closing_cancellation and not has_rental_counter
@@ -526,7 +557,7 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
                 "I have prepared your complete dossier for the notary, including mandatory insurance policies and a 15% Dockx moving discount."
             )
         elif stage == "active_decision":
-            if margin_penalty > 0:
+            if dominance < 0.20 and second_score > 5.0:
                 kate_message = (
                     f"Hi {first_name}, I noticed new independent business activity alongside your home search. "
                     "I've updated your borrowing profile to factor in both your property goals and entrepreneurial cashflow."
@@ -599,7 +630,7 @@ def predict_client_intent(client_id: str) -> Dict[str, Any]:
         why_am_i_seeing_this = f"Escrow refund detected. KBC Signal-to-Action engine downgraded stage to Exploring and adjusted confidence to {int(confidence*100)}% pending buyer confirmation."
     elif has_rental_counter:
         why_am_i_seeing_this = f"Rental lease agreement detected. Home acquisition intent paused and confidence adjusted to {int(confidence*100)}%."
-    elif margin_penalty > 0:
+    elif dominance < 0.20 and second_score > 5.0:
         competing_name = second_intent.replace('_', ' ').title()
         why_am_i_seeing_this = f"KBC Signal-to-Action engine detected competing signals with {competing_name}. Confidence adjusted to {int(confidence*100)}% due to mixed behavioral signals."
     elif detected_signals:
